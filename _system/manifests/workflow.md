@@ -65,11 +65,24 @@ Knowledge Atlas does not own:
 
 The canonical public content is the Markdown in this Git repository.
 
-GitHub Pages renders it.
+GitHub Pages renders it through Quartz.
 
 Notion may mirror metadata and links.
 
 Obsidian may edit files locally.
+
+## Site build
+
+The public site is built from reviewed public sections only:
+
+- `index.md`
+- `README.md`
+- `map.md`
+- `_wiki/`
+- `_system/manifests/`
+- `_outputs/`, when public deliverables exist
+
+The site build excludes raw capture, archives, scripts, local editor state, and private/draft filename patterns.
 
 ## Publishing rule
 

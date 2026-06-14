@@ -4,6 +4,7 @@ Newest entries first.
 
 ## 2026-06-14
 
+- **Site**: Added Quartz/GitHub Pages configuration for rendering the public atlas from selected public-safe sections.
 - **Initialization**: Established `knowledge-atlas` as a public curated knowledge atlas.
 - **Format**: Adopted an OKF-compatible Markdown/YAML profile.
 - **Workflow**: Defined public publication as reviewed output from private synthesis, never automatic private sync.
