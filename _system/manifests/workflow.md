@@ -87,7 +87,7 @@ The public site is built from reviewed public sections only:
 
 The site build excludes raw capture, archives, scripts, source-only operating docs, local editor state, and private/draft filename patterns.
 
-Published public folders should contain an `index.md` folder note so direct folder URLs render intentionally. Empty taxonomy folders should stay source-only until they contain reviewed pages.
+Published public folders should contain an `index.md` folder note so direct folder URLs render intentionally. Populated wiki sections render under `/_wiki/<section>/`; empty taxonomy folders stay source-only until they contain reviewed pages.
 
 Visual pages that depend on embedded HTML/CSS, diagrams, dark mode, or responsive layout should follow [Quartz Visual Page Workflow](quartz-visual-pages.md).
 

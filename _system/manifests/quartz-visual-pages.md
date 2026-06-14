@@ -115,7 +115,7 @@ gh run watch <run-id> --exit-status
 Use the live GitHub Pages URL for visual changes, not only source inspection. Add a cache-busting query with the commit hash, for example:
 
 ```text
-https://falk-eysen.github.io/knowledge-atlas/concepts/example-page?v=<commit>
+https://falk-eysen.github.io/knowledge-atlas/_wiki/concepts/example-page?v=<commit>
 ```
 
 In browser DevTools, verify at least:

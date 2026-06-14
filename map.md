@@ -108,10 +108,10 @@ Do not add private source paths, private Notion links, private Obsidian links, w
 
 ## Rendered site paths
 
-The Quartz site publishes only wiki section folders that contain reviewed public pages beyond `index.md`. Published wiki sections use top-level URLs.
+The Quartz site publishes only wiki section folders that contain reviewed public pages beyond `index.md`. Published wiki sections stay under `_wiki/` so the Explorer mirrors the source hierarchy.
 
 Current published section:
 
-- `/concepts/`
+- `/_wiki/concepts/`
 
 Source-only operating folders such as `_system/` stay in Git and are not copied into the rendered Explorer.

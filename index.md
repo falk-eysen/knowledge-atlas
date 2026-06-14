@@ -14,6 +14,6 @@ Public OKF-compatible knowledge catalog.
 
 ## Published knowledge areas
 
-- [Concepts](concepts/)
+- [Concepts](_wiki/concepts/)
 
 Other wiki sections are source taxonomy placeholders until they contain reviewed public pages.
