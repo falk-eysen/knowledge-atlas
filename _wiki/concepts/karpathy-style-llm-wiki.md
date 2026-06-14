@@ -16,219 +16,285 @@ This visual explains the repository shape used by the atlas: capture evidence fi
 
 <style>
   .kw-visual {
-    --kw-bg: #fbfaf7;
-    --kw-ink: #241f1a;
-    --kw-muted: #6f675c;
-    --kw-line: #ded6ca;
-    --kw-raw: #8a5a44;
-    --kw-wiki: #376f75;
-    --kw-out: #8b6f2f;
-    --kw-system: #5e548e;
-    border: 1px solid var(--kw-line);
-    border-radius: 28px;
-    padding: clamp(1rem, 2.5vw, 2rem);
-    background:
-      radial-gradient(circle at top left, rgba(139, 111, 47, 0.16), transparent 34rem),
-      linear-gradient(135deg, #fffdf8, var(--kw-bg));
-    color: var(--kw-ink);
-    box-shadow: 0 24px 70px rgba(36, 31, 26, 0.08);
+    --kw-border: var(--lightgray);
+    --kw-text: var(--dark);
+    --kw-muted: var(--darkgray);
+    --kw-card: var(--light);
+    --kw-raw: #c77756;
+    --kw-wiki: var(--secondary);
+    --kw-output: var(--tertiary);
+    --kw-system: #9b8cff;
+    border: 1px solid var(--kw-border);
+    border-radius: 1.35rem;
+    padding: clamp(1rem, 2.5vw, 1.6rem);
+    background: var(--light);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--light) 92%, var(--secondary) 8%), color-mix(in srgb, var(--light) 94%, var(--tertiary) 6%));
+    color: var(--kw-text);
   }
 
-  .kw-hero {
+  .kw-visual * {
+    box-sizing: border-box;
+  }
+
+  .kw-intro {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
-    gap: clamp(1rem, 3vw, 2rem);
-    align-items: center;
+    grid-template-columns: minmax(0, 0.95fr) minmax(16rem, 1.05fr);
+    gap: clamp(1rem, 3vw, 1.5rem);
+    align-items: start;
   }
 
   .kw-kicker {
     color: var(--kw-wiki);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
 
   .kw-title {
-    margin: 0.3rem 0 0.8rem;
-    font-size: clamp(2rem, 6vw, 4.6rem);
-    line-height: 0.95;
-    letter-spacing: -0.07em;
+    margin: 0.35rem 0 0.8rem;
+    max-width: 11ch;
+    font-size: clamp(2.1rem, 5vw, 3.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
   }
 
   .kw-lede {
-    max-width: 50rem;
+    max-width: 34rem;
+    margin: 0;
     color: var(--kw-muted);
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: 1.02rem;
   }
 
-  .kw-stack {
+  .kw-layers,
+  .kw-principles {
     display: grid;
-    gap: 0.8rem;
+    gap: 0.75rem;
   }
 
-  .kw-card {
-    position: relative;
-    border: 1px solid var(--kw-line);
-    border-left: 0.5rem solid var(--accent);
-    border-radius: 20px;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.76);
+  .kw-layer,
+  .kw-principle,
+  .kw-step {
+    border: 1px solid var(--kw-border);
+    border-radius: 1rem;
+    background: var(--kw-card);
+    background: color-mix(in srgb, var(--light) 88%, var(--dark) 12%);
   }
 
-  .kw-card strong {
+  .kw-layer {
+    display: grid;
+    grid-template-columns: 0.45rem minmax(0, 1fr);
+    min-height: 4.35rem;
+    overflow: hidden;
+  }
+
+  .kw-band {
+    background: var(--layer-color);
+  }
+
+  .kw-layer-body {
+    padding: 0.85rem 1rem;
+  }
+
+  .kw-layer strong,
+  .kw-step strong,
+  .kw-principle strong {
     display: block;
-    margin-bottom: 0.2rem;
-    font-size: 1.08rem;
+    color: var(--kw-text);
   }
 
-  .kw-card span {
+  .kw-layer span,
+  .kw-step span,
+  .kw-principle span {
+    display: block;
+    margin-top: 0.25rem;
     color: var(--kw-muted);
-    font-size: 0.94rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
   }
 
-  .kw-flow {
-    margin-top: clamp(1.2rem, 4vw, 2.6rem);
-    overflow-x: auto;
+  .kw-routes {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.25rem;
   }
 
-  .kw-flow svg {
-    min-width: 760px;
-    width: 100%;
-    height: auto;
+  .kw-route-title {
+    margin-bottom: 0.45rem;
+    color: var(--kw-muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .kw-rail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 0.55rem;
+    align-items: stretch;
+  }
+
+  .kw-rail-short {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+
+  .kw-step {
+    min-height: 6.25rem;
+    padding: 0.9rem;
+  }
+
+  .kw-step small {
+    display: inline-block;
+    margin-bottom: 0.55rem;
+    color: var(--step-color);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .kw-arrow {
+    align-self: center;
+    color: var(--kw-muted);
+    font-weight: 900;
   }
 
   .kw-principles {
-    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.9rem;
-    margin-top: 1.3rem;
+    margin-top: 1.25rem;
   }
 
   .kw-principle {
-    border: 1px solid var(--kw-line);
-    border-radius: 18px;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.55);
+    padding: 0.95rem;
   }
 
-  .kw-principle b {
-    display: block;
-    margin-bottom: 0.35rem;
-  }
-
-  .kw-principle p {
-    margin: 0;
-    color: var(--kw-muted);
-    font-size: 0.93rem;
-  }
-
-  @media (max-width: 820px) {
-    .kw-hero,
+  @media (max-width: 900px) {
+    .kw-intro,
     .kw-principles {
       grid-template-columns: 1fr;
+    }
+
+    .kw-rail,
+    .kw-rail-short {
+      grid-template-columns: 1fr;
+    }
+
+    .kw-arrow {
+      justify-self: center;
+      transform: rotate(90deg);
     }
   }
 </style>
 
 <section class="kw-visual" aria-label="Visual model of a Karpathy-style LLM wiki">
-  <div class="kw-hero">
+  <div class="kw-intro">
     <div>
       <div class="kw-kicker">LLM wiki architecture</div>
-      <h2 class="kw-title">Raw first. Synthesis second. Outputs last.</h2>
+      <h2 class="kw-title">Evidence becomes memory.</h2>
       <p class="kw-lede">
-        A Karpathy-style wiki treats a repository as a working memory for humans and language models. It keeps evidence, durable knowledge, generated deliverables, and operating rules in different layers so future synthesis has provenance.
+        A Karpathy-style wiki treats a repository as working memory for humans and language models. It keeps evidence, durable synthesis, generated deliverables, and operating rules in separate layers.
       </p>
     </div>
-    <div class="kw-stack">
-      <div class="kw-card" style="--accent: var(--kw-raw)">
-        <strong>_raw/</strong>
-        <span>Evidence, captures, excerpts, source notes, and scratch thinking.</span>
+    <div class="kw-layers" aria-label="Repository layers">
+      <div class="kw-layer" style="--layer-color: var(--kw-raw)">
+        <div class="kw-band"></div>
+        <div class="kw-layer-body">
+          <strong>_raw/</strong>
+          <span>Evidence, captures, excerpts, source notes, and scratch thinking.</span>
+        </div>
       </div>
-      <div class="kw-card" style="--accent: var(--kw-wiki)">
-        <strong>_wiki/</strong>
-        <span>Compiled concepts, claims, maps, questions, patterns, and project knowledge.</span>
+      <div class="kw-layer" style="--layer-color: var(--kw-wiki)">
+        <div class="kw-band"></div>
+        <div class="kw-layer-body">
+          <strong>_wiki/</strong>
+          <span>Compiled concepts, claims, maps, questions, patterns, and project knowledge.</span>
+        </div>
       </div>
-      <div class="kw-card" style="--accent: var(--kw-out)">
-        <strong>_outputs/</strong>
-        <span>Reports, guides, summaries, decks, and reusable public deliverables.</span>
+      <div class="kw-layer" style="--layer-color: var(--kw-output)">
+        <div class="kw-band"></div>
+        <div class="kw-layer-body">
+          <strong>_outputs/</strong>
+          <span>Reports, guides, summaries, decks, and reusable public deliverables.</span>
+        </div>
       </div>
-      <div class="kw-card" style="--accent: var(--kw-system)">
-        <strong>_system/</strong>
-        <span>Schemas, prompts, templates, manifests, lint rules, and workflow controls.</span>
+      <div class="kw-layer" style="--layer-color: var(--kw-system)">
+        <div class="kw-band"></div>
+        <div class="kw-layer-body">
+          <strong>_system/</strong>
+          <span>Schemas, prompts, templates, manifests, lint rules, and workflow controls.</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="kw-flow" role="img" aria-label="Flow from capture to raw source, synthesis, compiled wiki, generated output, and public publishing review">
-    <svg viewBox="0 0 1120 430" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <marker id="kw-arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-          <path d="M2 2 L10 6 L2 10 Z" fill="#6f675c" />
-        </marker>
-        <filter id="kw-shadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#241f1a" flood-opacity="0.12" />
-        </filter>
-      </defs>
+  <div class="kw-routes">
+    <div>
+      <div class="kw-route-title">Learning loop</div>
+      <div class="kw-rail" role="list" aria-label="Learning loop from capture to wiki">
+        <div class="kw-step" style="--step-color: var(--kw-raw)" role="listitem">
+          <small>1 Capture</small>
+          <strong>Collect traces</strong>
+          <span>Clips, notes, links, papers, repos, and observations.</span>
+        </div>
+        <div class="kw-arrow" aria-hidden="true">→</div>
+        <div class="kw-step" style="--step-color: var(--kw-raw)" role="listitem">
+          <small>2 Raw</small>
+          <strong>Preserve source context</strong>
+          <span>Keep source material grounded before interpreting it.</span>
+        </div>
+        <div class="kw-arrow" aria-hidden="true">→</div>
+        <div class="kw-step" style="--step-color: var(--kw-wiki)" role="listitem">
+          <small>3 Synthesis</small>
+          <strong>Distill and connect</strong>
+          <span>Turn material into concepts, claims, maps, and questions.</span>
+        </div>
+        <div class="kw-arrow" aria-hidden="true">→</div>
+        <div class="kw-step" style="--step-color: var(--kw-wiki)" role="listitem">
+          <small>4 Wiki</small>
+          <strong>Store durable knowledge</strong>
+          <span>Make reusable memory available to future work.</span>
+        </div>
+      </div>
+    </div>
 
-      <rect x="20" y="72" width="180" height="110" rx="24" fill="#fff" stroke="#ded6ca" filter="url(#kw-shadow)" />
-      <text x="110" y="118" text-anchor="middle" font-size="18" font-weight="800" fill="#241f1a">Capture</text>
-      <text x="110" y="147" text-anchor="middle" font-size="14" fill="#6f675c">clips, notes, links</text>
-
-      <path d="M205 127 H295" stroke="#6f675c" stroke-width="3" marker-end="url(#kw-arrow)" />
-
-      <rect x="300" y="72" width="180" height="110" rx="24" fill="#fff8f1" stroke="#c98a6a" filter="url(#kw-shadow)" />
-      <text x="390" y="118" text-anchor="middle" font-size="18" font-weight="800" fill="#8a5a44">_raw</text>
-      <text x="390" y="147" text-anchor="middle" font-size="14" fill="#6f675c">source memory</text>
-
-      <path d="M485 127 H575" stroke="#6f675c" stroke-width="3" marker-end="url(#kw-arrow)" />
-
-      <rect x="580" y="72" width="180" height="110" rx="24" fill="#f1faf9" stroke="#74a7ab" filter="url(#kw-shadow)" />
-      <text x="670" y="118" text-anchor="middle" font-size="18" font-weight="800" fill="#376f75">Synthesis</text>
-      <text x="670" y="147" text-anchor="middle" font-size="14" fill="#6f675c">distill and connect</text>
-
-      <path d="M765 127 H855" stroke="#6f675c" stroke-width="3" marker-end="url(#kw-arrow)" />
-
-      <rect x="860" y="72" width="220" height="110" rx="24" fill="#eef8f8" stroke="#74a7ab" filter="url(#kw-shadow)" />
-      <text x="970" y="118" text-anchor="middle" font-size="18" font-weight="800" fill="#376f75">_wiki</text>
-      <text x="970" y="147" text-anchor="middle" font-size="14" fill="#6f675c">durable knowledge</text>
-
-      <path d="M970 188 V245" stroke="#6f675c" stroke-width="3" marker-end="url(#kw-arrow)" />
-
-      <rect x="750" y="250" width="220" height="110" rx="24" fill="#fff9e8" stroke="#c7a343" filter="url(#kw-shadow)" />
-      <text x="860" y="296" text-anchor="middle" font-size="18" font-weight="800" fill="#8b6f2f">_outputs</text>
-      <text x="860" y="325" text-anchor="middle" font-size="14" fill="#6f675c">answers and artifacts</text>
-
-      <path d="M745 305 H635" stroke="#6f675c" stroke-width="3" marker-end="url(#kw-arrow)" />
-
-      <rect x="410" y="250" width="220" height="110" rx="24" fill="#f5f2ff" stroke="#978fd0" filter="url(#kw-shadow)" />
-      <text x="520" y="296" text-anchor="middle" font-size="18" font-weight="800" fill="#5e548e">Review gate</text>
-      <text x="520" y="325" text-anchor="middle" font-size="14" fill="#6f675c">privacy, quality, links</text>
-
-      <path d="M405 305 H295" stroke="#6f675c" stroke-width="3" marker-end="url(#kw-arrow)" />
-
-      <rect x="70" y="250" width="220" height="110" rx="24" fill="#eef8f8" stroke="#74a7ab" filter="url(#kw-shadow)" />
-      <text x="180" y="296" text-anchor="middle" font-size="18" font-weight="800" fill="#376f75">Public atlas</text>
-      <text x="180" y="325" text-anchor="middle" font-size="14" fill="#6f675c">curated pages only</text>
-
-      <path d="M520 245 C520 210, 520 205, 520 188" stroke="#5e548e" stroke-width="3" stroke-dasharray="8 8" marker-end="url(#kw-arrow)" />
-      <text x="540" y="218" font-size="13" fill="#5e548e">rules from _system</text>
-    </svg>
+    <div>
+      <div class="kw-route-title">Publication loop</div>
+      <div class="kw-rail kw-rail-short" role="list" aria-label="Publication loop from wiki to public atlas">
+        <div class="kw-step" style="--step-color: var(--kw-output)" role="listitem">
+          <small>5 Output</small>
+          <strong>Create artifacts</strong>
+          <span>Reports, guides, summaries, and public pages.</span>
+        </div>
+        <div class="kw-arrow" aria-hidden="true">→</div>
+        <div class="kw-step" style="--step-color: var(--kw-system)" role="listitem">
+          <small>6 Review</small>
+          <strong>Check safety and quality</strong>
+          <span>Privacy, provenance, links, status, and usefulness.</span>
+        </div>
+        <div class="kw-arrow" aria-hidden="true">→</div>
+        <div class="kw-step" style="--step-color: var(--kw-wiki)" role="listitem">
+          <small>7 Publish</small>
+          <strong>Expose only curated pages</strong>
+          <span>The public atlas is a reviewed layer, not a mirror.</span>
+        </div>
+      </div>
+    </div>
 
   </div>
 
   <div class="kw-principles">
     <div class="kw-principle">
-      <b>Separate evidence from synthesis</b>
-      <p>Raw material stays traceable; wiki pages state what was learned.</p>
+      <strong>Separate evidence from synthesis</strong>
+      <span>Raw material stays traceable; wiki pages state what was learned.</span>
     </div>
     <div class="kw-principle">
-      <b>Make the graph navigable</b>
-      <p>Concepts, claims, maps, and questions link across the knowledge base.</p>
+      <strong>Make the graph navigable</strong>
+      <span>Concepts, claims, maps, and questions link across the knowledge base.</span>
     </div>
     <div class="kw-principle">
-      <b>Publish only after review</b>
-      <p>Public pages are curated outputs, not automatic mirrors of private notes.</p>
+      <strong>Publish only after review</strong>
+      <span>Public pages are curated outputs, not automatic mirrors of private notes.</span>
     </div>
   </div>
 </section>

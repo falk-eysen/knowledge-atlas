@@ -4,6 +4,7 @@ Newest entries first.
 
 ## 2026-06-14
 
+- **Concepts**: Restyled the visual concept pages for Quartz dark mode and replaced inline SVG diagrams with HTML/CSS diagrams.
 - **Concepts**: Added visual concept pages for the Karpathy-style LLM wiki architecture and OKF.
 - **Site navigation**: Added folder notes for public atlas sections and flattened wiki section paths for Quartz URLs such as `/concepts/`.
 - **Site**: Added Quartz/GitHub Pages configuration for rendering the public atlas from selected public-safe sections.
