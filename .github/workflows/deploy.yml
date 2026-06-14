@@ -54,6 +54,7 @@ jobs:
           cp -R _system/manifests .quartz-build/quartz/content/_system/
           if [ -d _outputs ]; then cp -R _outputs .quartz-build/quartz/content/; fi
           cp quartz.config.yaml .quartz-build/quartz/quartz.config.yaml
+          if [ -f quartz/styles/custom.scss ]; then cp quartz/styles/custom.scss .quartz-build/quartz/quartz/styles/custom.scss; fi
 
       - name: Install Quartz dependencies
         working-directory: .quartz-build/quartz

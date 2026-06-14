@@ -1,0 +1,117 @@
+@use "./variables.scss" as *;
+
+// Knowledge Atlas global Quartz polish.
+// Keep this file conservative: content and embeds should still inherit the
+// semantic Quartz variables defined in quartz.config.yaml.
+
+:root {
+  --atlas-radius: 1.15rem;
+  --atlas-radius-sm: 0.72rem;
+  --atlas-hairline: color-mix(in srgb, var(--lightgray) 82%, var(--dark) 18%);
+  --atlas-panel: color-mix(in srgb, var(--light) 94%, var(--dark) 6%);
+  --atlas-panel-soft: color-mix(in srgb, var(--light) 96%, var(--secondary) 4%);
+  --atlas-shadow: 0 1.4rem 4rem color-mix(in srgb, var(--dark) 13%, transparent);
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 18% -12%,
+      color-mix(in srgb, var(--secondary) 15%, transparent),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 92% 6%,
+      color-mix(in srgb, var(--tertiary) 14%, transparent),
+      transparent 24rem
+    ),
+    var(--light);
+}
+
+html[saved-theme="dark"] body {
+  background:
+    radial-gradient(
+      circle at 14% -10%,
+      color-mix(in srgb, var(--secondary) 14%, transparent),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 88% 4%,
+      color-mix(in srgb, var(--tertiary) 10%, transparent),
+      transparent 24rem
+    ),
+    var(--light);
+}
+
+.page article {
+  border: 1px solid var(--atlas-hairline);
+  border-radius: var(--atlas-radius);
+  padding: clamp(1.15rem, 3vw, 2.25rem);
+  background: linear-gradient(
+    180deg,
+    var(--atlas-panel-soft),
+    var(--atlas-panel)
+  );
+  box-shadow: var(--atlas-shadow);
+}
+
+.page article > h1:first-child {
+  max-width: 14ch;
+  margin-top: 0;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.page article h2,
+.page article h3 {
+  letter-spacing: -0.025em;
+}
+
+a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a.internal {
+  border: 1px solid color-mix(in srgb, var(--secondary) 24%, transparent);
+  background: color-mix(in srgb, var(--secondary) 11%, transparent);
+}
+
+blockquote {
+  border-left-width: 4px;
+  border-radius: 0 var(--atlas-radius-sm) var(--atlas-radius-sm) 0;
+  padding: 0.85rem 1rem;
+  background: color-mix(in srgb, var(--secondary) 9%, transparent);
+}
+
+code {
+  border: 1px solid var(--atlas-hairline);
+  background: color-mix(in srgb, var(--lightgray) 78%, var(--light) 22%);
+}
+
+pre {
+  border-color: var(--atlas-hairline);
+  border-radius: var(--atlas-radius-sm);
+  background: color-mix(in srgb, var(--light) 86%, var(--dark) 14%);
+}
+
+table {
+  border: 1px solid var(--atlas-hairline);
+  border-radius: var(--atlas-radius-sm);
+  overflow: hidden;
+}
+
+.page #quartz-body .sidebar {
+  color: var(--darkgray);
+}
+
+.page #quartz-body .sidebar > * {
+  border-radius: var(--atlas-radius-sm);
+}
+
+@media all and ($mobile) {
+  .page article {
+    border-radius: 0.95rem;
+    padding: 1rem;
+  }
+}

@@ -67,6 +67,8 @@ The canonical public content is the Markdown in this Git repository.
 
 GitHub Pages renders it through Quartz.
 
+Global Quartz theme tokens live in `quartz.config.yaml`. Site-wide visual overrides live in `quartz/styles/custom.scss` and are copied into the temporary Quartz build workspace during deployment.
+
 Notion may mirror metadata and links.
 
 Obsidian may edit files locally.

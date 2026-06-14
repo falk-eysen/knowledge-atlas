@@ -15,16 +15,62 @@ tags:
 
 Use this workflow when adding or changing public pages that depend on embedded HTML, CSS, diagrams, responsive layout, dark mode, or Quartz rendering behavior.
 
+## Design Direction
+
+Knowledge Atlas should feel warm, neutral, dense, and readable. The dark mode direction is Claude-like: warm charcoal instead of blue-black, cream text instead of stark white, and clay/amber accents instead of saturated neon.
+
+The current global palette lives in `quartz.config.yaml` and the global Quartz polish lives in `quartz/styles/custom.scss`. Embedded page visuals should inherit those tokens rather than inventing a separate theme.
+
+## Why Use HTML Embeds
+
+Use HTML in Markdown when Markdown would make the artifact harder to read or review. The useful pattern is not decoration; it is higher information density, visual clarity, and faster human review.
+
+Good HTML embeds can act as:
+
+- a design-system contact sheet
+- a component state matrix
+- a compact explainer with diagrams and annotations
+- a status or incident report with timelines and small charts
+- a lightweight prototype for motion, layout, or interaction decisions
+
+Do not use HTML just to make normal prose look fancy. If a plain Markdown section communicates the idea clearly, keep it Markdown.
+
 ## Authoring Rules
 
 - Create public pages as Markdown notes with OKF frontmatter, not standalone `.html` files.
 - Put visual pages under the relevant reviewed public section, usually `_wiki/concepts/`.
 - Link notable pages from the section `index.md`.
 - Use a page-specific class prefix such as `kw-` or `okf-` to avoid CSS collisions.
-- Prefer HTML/CSS diagrams over inline SVG unless SVG is clearly needed and verified live.
-- Use Quartz theme variables such as `--light`, `--dark`, `--secondary`, `--tertiary`, `--lightgray`, and `--darkgray` instead of hard-coded light surfaces.
+- Prefer semantic HTML and CSS diagrams over inline SVG unless SVG is clearly needed and verified live.
+- Use Quartz theme variables such as `--light`, `--dark`, `--secondary`, `--tertiary`, `--lightgray`, `--gray`, and `--darkgray` instead of hard-coded light surfaces.
+- Use local CSS custom properties to alias Quartz variables, for example `--card`, `--muted`, `--accent`, and `--line`.
+- Keep all colors warm-neutral by default. Avoid cool gray slabs, neon accents, and generic blue-purple AI palettes.
 - Test both light and dark themes. Hard-coded white panels usually fail in Quartz dark mode.
 - Tune responsive breakpoints for Quartz's content column, not for a full-width application shell.
+- Prefer one strong visual structure over many equal cards. HTML should guide attention, not fill space.
+
+## Embedded HTML Standards
+
+- Start each embed with one wrapper `<section>` and an `aria-label`.
+- Put the page-local `<style>` block immediately before the wrapper section.
+- Scope every selector under the wrapper prefix.
+- Use CSS Grid/Flexbox, not tables, for layout unless the content is truly tabular.
+- Keep interaction optional. Public knowledge pages should remain useful with JavaScript disabled.
+- If adding controls, sliders, or copy buttons, explain why interaction improves review or understanding.
+- Make dense information scannable with labels, timelines, matrices, callouts, and short annotations.
+- Use real text in semantic elements rather than baking text into images.
+- Avoid huge pasted CSS frameworks, external scripts, remote assets, and hidden data blobs.
+- Keep temporary prototypes in private `_outputs/` unless they are reviewed public content.
+
+## Visual Palette Standards
+
+- Background: warm charcoal in dark mode, warm ivory in light mode.
+- Text: cream/off-white on dark mode, dark umber on light mode.
+- Borders: low-contrast warm gray, never pure black or pure white.
+- Primary accent: clay/rust, used for links, active states, and key marks.
+- Secondary accent: muted amber/olive, used sparingly for contrast or diagram categories.
+- Surfaces: slightly mixed from `--light`, `--dark`, and accents with `color-mix()`.
+- Shadows: soft and low-contrast; do not use glossy card shadows everywhere.
 
 ## Markdown And HTML Traps
 
@@ -97,6 +143,8 @@ Example DevTools check:
 
 Take screenshots when visual quality is part of the change. If screenshots are temporary verification artifacts, remove them before committing.
 
+For palette changes, screenshot both the home/index page and at least one visual concept page in dark mode.
+
 ## Parent Repository Pointer
 
 If this repository is checked out as a submodule, update the parent repository only after the public atlas commit is pushed. Stage and commit the submodule pointer in the parent separately from the public atlas commit.
@@ -111,3 +159,9 @@ Do not stage unrelated untracked files while doing the pointer update.
 - A blank line before an indented nested `<div>` caused CommonMark to render part of the visual as a code block.
 - The first responsive breakpoint was too conservative for the Quartz desktop content column and made cards taller than needed.
 - A successful source diff was not enough; the final check needed the deployed site, DevTools DOM inspection, dark mode forcing, and screenshots when useful.
+
+## Source Ideas
+
+- Thariq Shihipar's HTML effectiveness examples: https://thariqs.github.io/html-effectiveness/
+- Anthropic article on HTML artifacts with Claude Code: https://claude.com/blog/using-claude-code-the-unreasonable-effectiveness-of-html
+- Original X article reference: https://x.com/trq212/article/2052809885763747935
