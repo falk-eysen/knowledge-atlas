@@ -161,4 +161,10 @@ table {
     border-radius: 0.95rem;
     padding: 1rem;
   }
+
+  .page #quartz-body .sidebar.left .explorer-content,
+  .page #quartz-body .sidebar.left .explorer-ul {
+    max-width: 100%;
+    width: 100%;
+  }
 }
