@@ -64,6 +64,11 @@ Do not use HTML just to make normal prose look fancy. If a plain Markdown sectio
 
 ## Visual Palette Standards
 
+- Dark canvas: `#141413` for depth and `#262624` for the page background.
+- Dark surface: `#30302E` for primary panels and `#3A3935` for raised/hovered panels.
+- Dark text: `#FAF9F5` primary, `#C2C0B6` secondary, `#9C9A92` tertiary labels.
+- Dark accents: `#E08B6B` for clay links/marks, `#A55A3B` for clay fills, and `#D1A041` for amber highlights.
+- Dark borders: `rgba(222, 220, 209, 0.15)` soft and `rgba(222, 220, 209, 0.30)` strong.
 - Background: warm charcoal in dark mode, warm ivory in light mode.
 - Text: cream/off-white on dark mode, dark umber on light mode.
 - Borders: low-contrast warm gray, never pure black or pure white.
@@ -71,6 +76,7 @@ Do not use HTML just to make normal prose look fancy. If a plain Markdown sectio
 - Secondary accent: muted amber/olive, used sparingly for contrast or diagram categories.
 - Surfaces: slightly mixed from `--light`, `--dark`, and accents with `color-mix()`.
 - Shadows: soft and low-contrast; do not use glossy card shadows everywhere.
+- Normal-size text must meet WCAG AA contrast (`4.5:1`). The clay link `#E08B6B` passes on `#30302E`; the darker clay fill `#A55A3B` is for filled elements with cream text, not small link text on dark surfaces.
 
 ## Markdown And HTML Traps
 

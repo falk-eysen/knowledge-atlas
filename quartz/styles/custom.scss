@@ -7,10 +7,49 @@
 :root {
   --atlas-radius: 1.15rem;
   --atlas-radius-sm: 0.72rem;
-  --atlas-hairline: color-mix(in srgb, var(--lightgray) 82%, var(--dark) 18%);
-  --atlas-panel: color-mix(in srgb, var(--light) 94%, var(--dark) 6%);
-  --atlas-panel-soft: color-mix(in srgb, var(--light) 96%, var(--secondary) 4%);
+  --atlas-canvas-deep: color-mix(in srgb, var(--dark) 8%, var(--light) 92%);
+  --atlas-canvas: color-mix(in srgb, var(--dark) 4%, var(--light) 96%);
+  --atlas-surface: color-mix(in srgb, var(--light) 94%, var(--dark) 6%);
+  --atlas-surface-raised: color-mix(
+    in srgb,
+    var(--lightgray) 82%,
+    var(--light) 18%
+  );
+  --atlas-border-soft: color-mix(
+    in srgb,
+    var(--lightgray) 82%,
+    var(--dark) 18%
+  );
+  --atlas-border-strong: color-mix(
+    in srgb,
+    var(--lightgray) 68%,
+    var(--dark) 32%
+  );
+  --atlas-hairline: var(--atlas-border-soft);
+  --atlas-panel: var(--atlas-surface);
+  --atlas-panel-soft: color-mix(
+    in srgb,
+    var(--atlas-surface) 94%,
+    var(--secondary) 6%
+  );
   --atlas-shadow: 0 1.4rem 4rem color-mix(in srgb, var(--dark) 13%, transparent);
+}
+
+html[saved-theme="dark"] {
+  --atlas-canvas-deep: #141413;
+  --atlas-canvas: #262624;
+  --atlas-surface: #30302e;
+  --atlas-surface-raised: #3a3935;
+  --atlas-border-soft: rgba(222, 220, 209, 0.15);
+  --atlas-border-strong: rgba(222, 220, 209, 0.3);
+  --atlas-hairline: var(--atlas-border-soft);
+  --atlas-panel: var(--atlas-surface);
+  --atlas-panel-soft: color-mix(
+    in srgb,
+    var(--atlas-surface-raised) 74%,
+    var(--atlas-surface) 26%
+  );
+  --atlas-shadow: 0 1.4rem 4rem rgba(20, 20, 19, 0.34);
 }
 
 body {
@@ -25,22 +64,26 @@ body {
       color-mix(in srgb, var(--tertiary) 14%, transparent),
       transparent 24rem
     ),
-    var(--light);
+    var(--atlas-canvas);
 }
 
 html[saved-theme="dark"] body {
   background:
     radial-gradient(
       circle at 14% -10%,
-      color-mix(in srgb, var(--secondary) 14%, transparent),
+      color-mix(in srgb, var(--secondary) 11%, transparent),
       transparent 28rem
     ),
     radial-gradient(
       circle at 88% 4%,
-      color-mix(in srgb, var(--tertiary) 10%, transparent),
+      color-mix(in srgb, var(--tertiary) 8%, transparent),
       transparent 24rem
     ),
-    var(--light);
+    linear-gradient(
+      180deg,
+      var(--atlas-canvas) 0%,
+      var(--atlas-canvas-deep) 100%
+    );
 }
 
 .page article {
@@ -73,30 +116,34 @@ a {
 }
 
 a.internal {
-  border: 1px solid color-mix(in srgb, var(--secondary) 24%, transparent);
-  background: color-mix(in srgb, var(--secondary) 11%, transparent);
+  border: 1px solid color-mix(in srgb, var(--secondary) 22%, transparent);
+  background: color-mix(in srgb, var(--secondary) 9%, transparent);
 }
 
 blockquote {
   border-left-width: 4px;
   border-radius: 0 var(--atlas-radius-sm) var(--atlas-radius-sm) 0;
   padding: 0.85rem 1rem;
-  background: color-mix(in srgb, var(--secondary) 9%, transparent);
+  background: color-mix(in srgb, var(--secondary) 8%, transparent);
 }
 
 code {
   border: 1px solid var(--atlas-hairline);
-  background: color-mix(in srgb, var(--lightgray) 78%, var(--light) 22%);
+  background: var(--atlas-surface-raised);
 }
 
 pre {
   border-color: var(--atlas-hairline);
   border-radius: var(--atlas-radius-sm);
-  background: color-mix(in srgb, var(--light) 86%, var(--dark) 14%);
+  background: color-mix(
+    in srgb,
+    var(--atlas-surface) 86%,
+    var(--atlas-canvas-deep) 14%
+  );
 }
 
 table {
-  border: 1px solid var(--atlas-hairline);
+  border: 1px solid var(--atlas-border-strong);
   border-radius: var(--atlas-radius-sm);
   overflow: hidden;
 }

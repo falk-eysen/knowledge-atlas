@@ -4,6 +4,7 @@ Newest entries first.
 
 ## 2026-06-14
 
+- **Design**: Finalized the matte warm dark palette around Claude/Radix Sand-inspired tokens: charcoal canvas, cream text, clay links, amber highlights, and low-contrast warm borders.
 - **Design**: Shifted the Quartz site toward a warm neutral Claude-like palette, added a site-wide `custom.scss` override, and expanded HTML-in-Markdown standards for dense visual artifacts.
 - **Workflow**: Added a Quartz visual page workflow with authoring rules, Markdown/HTML rendering traps, deploy verification, DevTools checks, and lessons from the visual concept pages.
 - **Agent workflow**: Modernized `AGENTS.md` into a concise public-safe entrypoint with linked manifests, validation expectations, and Quartz deployment guidance.
