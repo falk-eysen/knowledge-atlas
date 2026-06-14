@@ -156,6 +156,384 @@ table {
   border-radius: var(--atlas-radius-sm);
 }
 
+// Visual concept pages. These styles live in site CSS instead of inline Markdown
+// <style> blocks so Quartz search excerpts stay focused on page content.
+.kw-visual {
+  --kw-border: var(--lightgray);
+  --kw-text: var(--dark);
+  --kw-muted: var(--darkgray);
+  --kw-card: var(--light);
+  --kw-raw: #c77756;
+  --kw-wiki: var(--secondary);
+  --kw-output: var(--tertiary);
+  --kw-system: #b8ad9e;
+  border: 1px solid var(--kw-border);
+  border-radius: 1.35rem;
+  padding: clamp(1rem, 2.5vw, 1.6rem);
+  background: var(--light);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--light) 92%, var(--secondary) 8%),
+    color-mix(in srgb, var(--light) 94%, var(--tertiary) 6%)
+  );
+  color: var(--kw-text);
+}
+
+.kw-visual * {
+  box-sizing: border-box;
+}
+
+.kw-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(16rem, 1.05fr);
+  gap: clamp(1rem, 3vw, 1.5rem);
+  align-items: start;
+}
+
+.kw-kicker {
+  color: var(--kw-wiki);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.kw-title {
+  margin: 0.35rem 0 0.8rem;
+  max-width: 11ch;
+  font-size: clamp(2.1rem, 5vw, 3.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.kw-lede {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--kw-muted);
+  font-size: 1.02rem;
+}
+
+.kw-layers,
+.kw-principles {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.kw-layer,
+.kw-principle,
+.kw-step {
+  border: 1px solid var(--kw-border);
+  border-radius: 1rem;
+  background: var(--kw-card);
+  background: color-mix(in srgb, var(--light) 88%, var(--dark) 12%);
+}
+
+.kw-layer {
+  display: grid;
+  grid-template-columns: 0.45rem minmax(0, 1fr);
+  min-height: 4.35rem;
+  overflow: hidden;
+}
+
+.kw-band {
+  background: var(--layer-color);
+}
+
+.kw-layer-body {
+  padding: 0.85rem 1rem;
+}
+
+.kw-layer strong,
+.kw-step strong,
+.kw-principle strong {
+  display: block;
+  color: var(--kw-text);
+}
+
+.kw-layer span,
+.kw-step span,
+.kw-principle span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--kw-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.kw-routes {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.kw-route-title {
+  margin-bottom: 0.45rem;
+  color: var(--kw-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.kw-rail {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr)
+    auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: stretch;
+}
+
+.kw-rail-short {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+}
+
+.kw-step {
+  min-height: 6.25rem;
+  padding: 0.9rem;
+}
+
+.kw-step small {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  color: var(--step-color);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kw-arrow {
+  align-self: center;
+  color: var(--kw-muted);
+  font-weight: 900;
+}
+
+.kw-principles {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.kw-principle {
+  padding: 0.95rem;
+}
+
+.okf-visual {
+  --okf-border: var(--lightgray);
+  --okf-text: var(--dark);
+  --okf-muted: var(--darkgray);
+  --okf-card: var(--light);
+  --okf-blue: var(--secondary);
+  --okf-gold: var(--tertiary);
+  --okf-violet: #b8ad9e;
+  --okf-green: #9aa66d;
+  border: 1px solid var(--okf-border);
+  border-radius: 1.35rem;
+  padding: clamp(1rem, 2.5vw, 1.6rem);
+  background: var(--light);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--light) 92%, var(--secondary) 8%),
+    color-mix(in srgb, var(--light) 94%, var(--tertiary) 6%)
+  );
+  color: var(--okf-text);
+}
+
+.okf-visual * {
+  box-sizing: border-box;
+}
+
+.okf-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(17rem, 1.15fr);
+  gap: clamp(1rem, 3vw, 1.5rem);
+  align-items: start;
+}
+
+.okf-kicker {
+  color: var(--okf-blue);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.okf-title {
+  margin: 0.35rem 0 0.8rem;
+  max-width: 12ch;
+  font-size: clamp(2rem, 5vw, 3.65rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.okf-lede {
+  max-width: 32rem;
+  margin: 0;
+  color: var(--okf-muted);
+  font-size: 1.02rem;
+}
+
+.okf-note,
+.okf-tile,
+.okf-node {
+  border: 1px solid var(--okf-border);
+  border-radius: 1rem;
+  background: var(--okf-card);
+  background: color-mix(in srgb, var(--light) 88%, var(--dark) 12%);
+}
+
+.okf-note {
+  overflow: hidden;
+}
+
+.okf-note-bar {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  border-bottom: 1px solid var(--okf-border);
+  padding: 0.72rem 0.9rem;
+  background: color-mix(in srgb, var(--light) 82%, var(--secondary) 18%);
+}
+
+.okf-dot {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 999px;
+  background: var(--dot);
+}
+
+.okf-code {
+  display: grid;
+  gap: 0.28rem;
+  padding: 0.95rem;
+  overflow-x: auto;
+  font-family:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.okf-code-row {
+  display: grid;
+  grid-template-columns: 2ch minmax(18rem, 1fr);
+  gap: 0.9rem;
+}
+
+.okf-num {
+  color: color-mix(in srgb, var(--okf-muted) 70%, transparent);
+  user-select: none;
+}
+
+.okf-yaml {
+  color: var(--okf-violet);
+}
+
+.okf-md {
+  color: var(--okf-blue);
+}
+
+.okf-link {
+  color: var(--okf-gold);
+}
+
+.okf-schema {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.okf-tile {
+  border-top: 0.3rem solid var(--tile);
+  padding: 0.9rem;
+}
+
+.okf-tile strong,
+.okf-node strong {
+  display: block;
+  color: var(--okf-text);
+}
+
+.okf-tile span,
+.okf-node span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--okf-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.okf-flow {
+  margin-top: 1.25rem;
+}
+
+.okf-flow-title {
+  margin-bottom: 0.45rem;
+  color: var(--okf-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.okf-rail {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr)
+    auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: stretch;
+}
+
+.okf-node {
+  min-height: 6.4rem;
+  padding: 0.9rem;
+}
+
+.okf-node small {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  color: var(--node-color);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.okf-arrow {
+  align-self: center;
+  color: var(--okf-muted);
+  font-weight: 900;
+}
+
+@media (max-width: 640px) {
+  .kw-intro,
+  .kw-principles,
+  .okf-intro,
+  .okf-schema {
+    grid-template-columns: 1fr;
+  }
+
+  .kw-rail,
+  .kw-rail-short,
+  .okf-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .kw-arrow,
+  .okf-arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .kw-rail,
+  .kw-rail-short,
+  .okf-rail {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media all and ($mobile) {
   .page article {
     border-radius: 0.95rem;

@@ -4,6 +4,7 @@ Newest entries first.
 
 ## 2026-06-14
 
+- **Design**: Moved visual concept page CSS out of Markdown and into scoped site SCSS after Playwright search testing showed inline style blocks polluted search excerpts.
 - **Design**: Tightened mobile explorer width containment while verifying the matte dark palette on deployed pages.
 - **Design**: Finalized the matte warm dark palette around Claude/Radix Sand-inspired tokens: charcoal canvas, cream text, clay links, amber highlights, and low-contrast warm borders.
 - **Design**: Shifted the Quartz site toward a warm neutral Claude-like palette, added a site-wide `custom.scss` override, and expanded HTML-in-Markdown standards for dense visual artifacts.

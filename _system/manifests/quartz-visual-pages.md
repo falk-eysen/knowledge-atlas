@@ -44,6 +44,7 @@ Do not use HTML just to make normal prose look fancy. If a plain Markdown sectio
 - Prefer semantic HTML and CSS diagrams over inline SVG unless SVG is clearly needed and verified live.
 - Use Quartz theme variables such as `--light`, `--dark`, `--secondary`, `--tertiary`, `--lightgray`, `--gray`, and `--darkgray` instead of hard-coded light surfaces.
 - Use local CSS custom properties to alias Quartz variables, for example `--card`, `--muted`, `--accent`, and `--line`.
+- Put reusable or substantial visual-page CSS in `quartz/styles/custom.scss`, not inline Markdown `<style>` blocks. Quartz search can index inline style text and pollute result excerpts.
 - Keep all colors warm-neutral by default. Avoid cool gray slabs, neon accents, and generic blue-purple AI palettes.
 - Test both light and dark themes. Hard-coded white panels usually fail in Quartz dark mode.
 - Tune responsive breakpoints for Quartz's content column, not for a full-width application shell.
@@ -52,8 +53,8 @@ Do not use HTML just to make normal prose look fancy. If a plain Markdown sectio
 ## Embedded HTML Standards
 
 - Start each embed with one wrapper `<section>` and an `aria-label`.
-- Put the page-local `<style>` block immediately before the wrapper section.
 - Scope every selector under the wrapper prefix.
+- Keep Markdown pages content-first. Use inline styles only for tiny per-element variables such as `style="--tile: var(--secondary)"`.
 - Use CSS Grid/Flexbox, not tables, for layout unless the content is truly tabular.
 - Keep interaction optional. Public knowledge pages should remain useful with JavaScript disabled.
 - If adding controls, sliders, or copy buttons, explain why interaction improves review or understanding.
