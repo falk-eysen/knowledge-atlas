@@ -89,6 +89,8 @@ The site build excludes raw capture, archives, scripts, local editor state, and 
 
 Every public folder should contain an `index.md` folder note so direct folder URLs render intentionally.
 
+Visual pages that depend on embedded HTML/CSS, diagrams, dark mode, or responsive layout should follow [Quartz Visual Page Workflow](quartz-visual-pages.md).
+
 ## Publishing rule
 
 Nothing enters this repo from private material without review.

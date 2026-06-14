@@ -27,8 +27,9 @@ Read in this order when relevant:
 5. [`_wiki/log.md`](_wiki/log.md) - chronological update log
 6. [`_system/manifests/okf-profile.md`](_system/manifests/okf-profile.md) - Markdown/frontmatter rules
 7. [`_system/manifests/workflow.md`](_system/manifests/workflow.md) - publication workflow and site build shape
-8. [`_system/manifests/privacy.md`](_system/manifests/privacy.md) - public safety rules
-9. [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) - Quartz/GitHub Pages deployment
+8. [`_system/manifests/quartz-visual-pages.md`](_system/manifests/quartz-visual-pages.md) - visual page authoring and verification workflow
+9. [`_system/manifests/privacy.md`](_system/manifests/privacy.md) - public safety rules
+10. [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) - Quartz/GitHub Pages deployment
 
 ## Repository Map
 
@@ -85,6 +86,7 @@ Before finishing a site or deployment change:
 - Review `.github/workflows/deploy.yml` for the actual Quartz build path.
 - Confirm published sections are still intentionally copied into Quartz content.
 - Confirm excluded areas remain excluded from the site build: `_raw/`, `_archive/`, `scripts/`, local editor state, and private/draft filename patterns.
+- Follow `_system/manifests/quartz-visual-pages.md` for embedded HTML/CSS, visual diagrams, dark-mode, or responsive rendering changes.
 - Verify GitHub Pages after push when the change affects rendering or deployment.
 
 ## Required Updates

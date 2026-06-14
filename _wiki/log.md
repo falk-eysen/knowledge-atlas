@@ -4,6 +4,7 @@ Newest entries first.
 
 ## 2026-06-14
 
+- **Workflow**: Added a Quartz visual page workflow with authoring rules, Markdown/HTML rendering traps, deploy verification, DevTools checks, and lessons from the visual concept pages.
 - **Agent workflow**: Modernized `AGENTS.md` into a concise public-safe entrypoint with linked manifests, validation expectations, and Quartz deployment guidance.
 - **Concepts**: Restyled the visual concept pages for Quartz dark mode and replaced inline SVG diagrams with HTML/CSS diagrams.
 - **Concepts**: Added visual concept pages for the Karpathy-style LLM wiki architecture and OKF.
