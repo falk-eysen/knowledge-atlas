@@ -124,7 +124,8 @@ In browser DevTools, verify at least:
 - the visual root element exists
 - dark mode uses Quartz colors
 - no custom HTML or SVG appears inside visible `pre` or `code` blocks
-- layout is acceptable in the normal desktop Quartz column and on narrow/mobile width
+- layout is acceptable in the normal desktop Quartz column and at `320`, `360`, `390`, `430`, `520`, and `640` px widths
+- there is no horizontal document overflow, clipped text, or code-card text that requires sideways scrolling on mobile
 
 Example DevTools check:
 

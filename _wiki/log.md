@@ -4,6 +4,7 @@ Newest entries first.
 
 ## 2026-06-14
 
+- **Design**: Fixed mobile clipping in public visual embeds after Playwright checks across `320`, `360`, `390`, `430`, `520`, and `640` px widths.
 - **Concepts**: Added a public ObjectGraph visual concept page synthesizing the arXiv paper into an agent-native document traversal model.
 - **Site navigation**: Changed rendered wiki paths to `/wiki/`, stopped publishing `log.md`, `README.md`, and `map.md` into GitHub Pages, and removed compatibility aliases because Quartz still exposed them in Explorer.
 - **Site navigation**: Kept source-only system docs, empty taxonomy folders, and empty `_outputs` out of the rendered Quartz Explorer.
