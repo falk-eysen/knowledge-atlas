@@ -12,140 +12,90 @@ tags:
 
 # AGENTS.md
 
-This file is the operating schema for agents working in this repository.
+This is the agent entrypoint for `knowledge-atlas`, a public OKF-compatible knowledge catalog rendered with Quartz on GitHub Pages.
 
-## Purpose
+Everything in this repository must be safe for public readers.
 
-This is a public OKF-compatible knowledge catalog.
+## Start Here
 
-Agents should help keep it:
+Read in this order when relevant:
 
-- public-safe
-- cited
-- navigable
-- concise
-- useful
-- internally consistent
-- OKF-compatible
+1. [`map.md`](map.md) - high-level repository layout and published site paths
+2. [`index.md`](index.md) - OKF bundle entrypoint
+3. [`CONTRIBUTING.md`](CONTRIBUTING.md) - public contribution expectations
+4. [`_wiki/index.md`](_wiki/index.md) - public knowledge index
+5. [`_wiki/log.md`](_wiki/log.md) - chronological update log
+6. [`_system/manifests/okf-profile.md`](_system/manifests/okf-profile.md) - Markdown/frontmatter rules
+7. [`_system/manifests/workflow.md`](_system/manifests/workflow.md) - publication workflow and site build shape
+8. [`_system/manifests/privacy.md`](_system/manifests/privacy.md) - public safety rules
+9. [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) - Quartz/GitHub Pages deployment
 
-## First read
+## Repository Map
 
-When starting work, read:
+- `_raw/` - public-safe source notes and references
+- `_wiki/` - curated public knowledge: concepts, references, claims, maps, playbooks, patterns, learning paths, projects, areas, themes, and open questions
+- `_outputs/` - public deliverables
+- `_system/` - schemas, manifests, templates, prompts, lint reports, indexes, and workflow material
+- `_archive/` - retired public material
+- `scripts/` - helper automation, when present
 
-1. [`map.md`](map.md)
-2. [`index.md`](index.md)
-3. [`_wiki/index.md`](_wiki/index.md)
-4. relevant `_system/manifests/...`
-5. relevant `_raw/...` source notes
-6. relevant `_wiki/...` pages
+## Working Rules
 
-## Repository model
+- Inspect nearby pages, templates, and indexes before adding new content.
+- Put public source notes in `_raw/`.
+- Put synthesized public knowledge in `_wiki/`.
+- Put public deliverables in `_outputs/`.
+- Put repository operating material in `_system/`.
+- Use normal Markdown links.
+- Include OKF-compatible YAML frontmatter on normal Markdown files; `index.md` and `log.md` are reserved navigation/history files.
+- Cite public sources for factual claims when possible.
+- Keep uncertainty visible; do not overstate claims.
+- Every public wiki section folder should have an `index.md` folder note so direct Quartz URLs render intentionally.
 
-```text
-_raw/      public-safe source notes and references
-_wiki/     curated public knowledge
-_outputs/  public deliverables
-_system/   manifests, templates, prompts, lint
-_archive/  retired public material
-scripts/   helper automation
-```
+## Public Boundary
 
-## Placement rules
+Do not commit:
 
-### `_raw/`
+- credentials, tokens, keys, passwords, or secret values
+- private local filesystem paths
+- private repo or vault names
+- private Notion or Obsidian links
+- workplace-sensitive details
+- customer identifiers
+- unnecessary personal data
+- copied copyrighted text that is not clearly allowed
+- files with `visibility: private`
 
-Use `_raw/` for public-safe source notes.
+Reviewed material may come from private workspaces, but private identifiers and private source paths stay out of this repository.
 
-Examples:
+## Validation
 
-- article notes
-- paper notes
-- public GitHub repository notes
-- public video summaries
-- book notes
-- reference captures
+There is no package manifest in this repo. Do not invent local build commands.
 
-Do not include private source material.
+Before finishing a content change, use the narrowest checks that apply:
 
-### `_wiki/`
+- Confirm changed normal Markdown files have public OKF-compatible frontmatter.
+- Check public safety: no private paths, private links, secrets, sensitive details, or `visibility: private`.
+- Check links and citations you added or changed.
+- Update section `index.md` files when adding notable pages.
+- Append `_wiki/log.md` for meaningful public content, workflow, publication, or instruction changes.
 
-Use `_wiki/` for synthesized public knowledge.
+Before finishing a site or deployment change:
 
-Examples:
+- Review `.github/workflows/deploy.yml` for the actual Quartz build path.
+- Confirm published sections are still intentionally copied into Quartz content.
+- Confirm excluded areas remain excluded from the site build: `_raw/`, `_archive/`, `scripts/`, local editor state, and private/draft filename patterns.
+- Verify GitHub Pages after push when the change affects rendering or deployment.
 
-- concepts
-- claims
-- maps
-- areas
-- themes
-- projects
-- open questions
-- playbooks
+## Required Updates
 
-Wiki pages should link to public sources.
+- Update `map.md` when top-level structure or published site paths change.
+- Update `_wiki/index.md` when major public wiki pages or clusters are added.
+- Append `_wiki/log.md` when public content, workflow, publication, or instruction rules change.
+- Update `_system/manifests/...` when OKF schema, workflow, privacy, or publication behavior changes.
 
-### `_outputs/`
+## Maintenance
 
-Use `_outputs/` for public deliverables.
+Keep this file short. Update it only when agent entrypoints, validation expectations, safety rules, repository structure, or deployment shape changes.
 
-Examples:
-
-- reports
-- guides
-- slides
-- public explanations
-
-### `_system/`
-
-Use `_system/` for repository rules, schemas, manifests, templates, and lint reports.
-
-## Public boundary
-
-This repo must never link to a private repo or vault.
-
-Forbidden patterns:
-
-```text
-../<private-repo>
-_private
-visibility: private
-private_refs
-obsidian://open?vault=<private-vault>
-```
-
-## OKF conventions
-
-Normal Markdown files require YAML frontmatter with `type`.
-
-Recommended baseline:
-
-```yaml
----
-type: Concept
-title: Example
-description: One sentence.
-visibility: public
-status: draft
-tags:
-  - example
----
-```
-
-## Claim discipline
-
-When a page makes a factual claim, prefer citations.
-
-When uncertain, say so.
-
-Do not overstate.
-
-## Expected outcome
-
-A good contribution leaves the atlas:
-
-- easier to navigate
-- safer to publish
-- more useful to readers
-- better cited
-- more coherent
-- still compatible with the OKF profile
+Do not add `CLAUDE.md`, Copilot instructions, Cursor rules, Gemini files, or other harness adapters unless the repo actually starts using those tools.
