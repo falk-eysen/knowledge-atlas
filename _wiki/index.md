@@ -1,4 +1,9 @@
-# Public wiki index
+---
+title: Wiki
+description: Public entry point for curated knowledge.
+---
+
+# Wiki
 
 This is the public entry point for curated knowledge.
 

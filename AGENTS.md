@@ -85,7 +85,7 @@ Before finishing a site or deployment change:
 
 - Review `.github/workflows/deploy.yml` for the actual Quartz build path.
 - Confirm only populated public sections are copied into Quartz content.
-- Confirm excluded areas remain excluded from the site build: `_raw/`, `_archive/`, `scripts/`, local editor state, and private/draft filename patterns.
+- Confirm excluded areas remain excluded from the site build: `_raw/`, `_system/`, `_archive/`, `scripts/`, logs, repository docs, local editor state, and private/draft filename patterns.
 - Follow `_system/manifests/quartz-visual-pages.md` for embedded HTML/CSS, visual diagrams, dark-mode, or responsive rendering changes.
 - Verify GitHub Pages after push when the change affects rendering or deployment.
 

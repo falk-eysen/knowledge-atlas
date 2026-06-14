@@ -41,20 +41,28 @@ jobs:
       - name: Stage public atlas content
         run: |
           mkdir -p .quartz-build/quartz/content
-          cp index.md README.md map.md .quartz-build/quartz/content/
-          mkdir -p .quartz-build/quartz/content/_wiki
-          cp _wiki/index.md _wiki/log.md .quartz-build/quartz/content/_wiki/
+          cp index.md .quartz-build/quartz/content/
+          mkdir -p .quartz-build/quartz/content/wiki .quartz-build/quartz/content/_wiki
+          cp _wiki/index.md .quartz-build/quartz/content/wiki/index.md
+          cp _wiki/index.md .quartz-build/quartz/content/_wiki/index.md
+          mark_unlisted() {
+            find "$1" -type f -name '*.md' \
+              -exec perl -0pi -e 'if (s/\A---\r?\n/---\nunlisted: true\n/) {} else { s/\A/---\nunlisted: true\n---\n\n/ }' {} \;
+          }
+          mark_unlisted .quartz-build/quartz/content/_wiki
           for section in concepts references claims maps playbooks patterns learning_paths projects areas themes open_questions; do
-            if [ -d "_wiki/$section" ] && find "_wiki/$section" -type f -name '*.md' ! -name 'index.md' ! -name '*.draft.md' ! -name '*.private.md' | grep -q .; then
+            if [ -d "_wiki/$section" ] && find "_wiki/$section" -type f -name '*.md' ! -name 'index.md' ! -name 'log.md' ! -name '*.draft.md' ! -name '*.private.md' | grep -q .; then
+              cp -R "_wiki/$section" ".quartz-build/quartz/content/wiki/$section"
               cp -R "_wiki/$section" ".quartz-build/quartz/content/_wiki/$section"
+              mark_unlisted ".quartz-build/quartz/content/_wiki/$section"
               cp -R "_wiki/$section" ".quartz-build/quartz/content/$section"
-              find ".quartz-build/quartz/content/$section" -type f -name '*.md' \
-                -exec perl -0pi -e 's/\A---\r?\n/---\nunlisted: true\n/' {} \;
+              mark_unlisted ".quartz-build/quartz/content/$section"
             fi
           done
-          if [ -d _outputs ] && find _outputs -type f -name '*.md' ! -name 'index.md' ! -name '*.draft.md' ! -name '*.private.md' | grep -q .; then
+          if [ -d _outputs ] && find _outputs -type f -name '*.md' ! -name 'index.md' ! -name 'log.md' ! -name '*.draft.md' ! -name '*.private.md' | grep -q .; then
             cp -R _outputs .quartz-build/quartz/content/
           fi
+          find .quartz-build/quartz/content -type f -name 'log.md' -delete
           cp quartz.config.yaml .quartz-build/quartz/quartz.config.yaml
           if [ -f quartz/styles/custom.scss ]; then cp quartz/styles/custom.scss .quartz-build/quartz/quartz/styles/custom.scss; fi
 

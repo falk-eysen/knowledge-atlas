@@ -4,6 +4,7 @@ Newest entries first.
 
 ## 2026-06-14
 
+- **Site navigation**: Changed rendered wiki paths to `/wiki/`, stopped publishing `log.md`, `README.md`, and `map.md` into GitHub Pages, and kept old wiki routes only as unlisted compatibility aliases.
 - **Site navigation**: Kept source-only system docs and empty taxonomy folders out of the rendered Quartz Explorer; populated wiki sections now stay under `_wiki/`, with unlisted top-level aliases only for link compatibility.
 - **Design**: Moved visual concept page CSS out of Markdown and into scoped site SCSS after Playwright search testing showed inline style blocks polluted search excerpts.
 - **Design**: Tightened mobile explorer width containment while verifying the matte dark palette on deployed pages.

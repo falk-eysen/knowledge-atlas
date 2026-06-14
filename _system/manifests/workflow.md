@@ -78,18 +78,15 @@ Obsidian may edit files locally.
 The public site is built from reviewed public sections only:
 
 - `index.md`
-- `README.md`
-- `map.md`
-- `_wiki/index.md`
-- `_wiki/log.md`
+- `_wiki/index.md`, rendered as `/wiki/`
 - `_wiki/<public-section>/index.md` and reviewed child pages, only when that section has public pages beyond `index.md`
 - `_outputs/`, only when public deliverables exist beyond the folder note
 
-The site build excludes raw capture, archives, scripts, source-only operating docs, local editor state, and private/draft filename patterns.
+The site build excludes raw capture, archives, scripts, source-only operating docs, repository docs such as `README.md` and `map.md`, all `log.md` files, local editor state, and private/draft filename patterns.
 
-Published public folders should contain an `index.md` folder note so direct folder URLs render intentionally. Populated wiki sections render under `/_wiki/<section>/`; empty taxonomy folders stay source-only until they contain reviewed pages.
+Published public folders should contain an `index.md` folder note so direct folder URLs render intentionally. Populated wiki sections render under `/wiki/<section>/`; empty taxonomy folders stay source-only until they contain reviewed pages.
 
-The build may emit unlisted top-level aliases for populated wiki sections to keep old links and Quartz Explorer folder hrefs working. These aliases must use `unlisted: true` and must not appear in Explorer, search, RSS, sitemap, tags, or graph discovery surfaces.
+The build may emit unlisted aliases such as `/_wiki/<section>/` and `/<section>/` for populated wiki sections to keep old links working. These aliases must use `unlisted: true` and must not appear in Explorer, search, RSS, sitemap, tags, or graph discovery surfaces.
 
 Visual pages that depend on embedded HTML/CSS, diagrams, dark mode, or responsive layout should follow [Quartz Visual Page Workflow](quartz-visual-pages.md).
 

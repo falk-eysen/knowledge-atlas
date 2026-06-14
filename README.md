@@ -86,4 +86,4 @@ public note → private Notion page
 - [`_wiki/index.md`](_wiki/index.md) — public knowledge index
 - [`_wiki/log.md`](_wiki/log.md) — update log
 
-Operating docs such as `AGENTS.md` and `_system/manifests/` live in the Git repository, not in the rendered site Explorer.
+The rendered Pages site publishes only the homepage and reader-facing `wiki/` pages. `README.md`, `map.md`, `log.md`, `AGENTS.md`, and `_system/manifests/` live in Git, not in the rendered site Explorer.

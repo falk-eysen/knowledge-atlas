@@ -8,12 +8,11 @@ Public OKF-compatible knowledge catalog.
 
 ## Start here
 
-- [Repository map](map.md)
-- [Public wiki index](_wiki/index.md)
-- [Update log](_wiki/log.md)
+- [Wiki](wiki/)
+- [Concepts](wiki/concepts/)
 
-## Published knowledge areas
+## Scope
 
-- [Concepts](_wiki/concepts/)
+The site publishes reader-facing knowledge, not repository operating files.
 
-Other wiki sections are source taxonomy placeholders until they contain reviewed public pages.
+Source-only docs, logs, and empty taxonomy sections stay in Git until they become useful public pages.
