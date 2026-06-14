@@ -177,12 +177,18 @@ This visual explains the repository shape used by the atlas: capture evidence fi
 
     .kw-rail,
     .kw-rail-short {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .kw-arrow {
-      justify-self: center;
-      transform: rotate(90deg);
+      display: none;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .kw-rail,
+    .kw-rail-short {
+      grid-template-columns: 1fr;
     }
   }
 </style>

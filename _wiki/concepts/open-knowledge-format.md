@@ -203,12 +203,17 @@ OKF is the public atlas convention for turning Markdown notes into portable know
     }
 
     .okf-rail {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .okf-arrow {
-      justify-self: center;
-      transform: rotate(90deg);
+      display: none;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .okf-rail {
+      grid-template-columns: 1fr;
     }
   }
 </style>
