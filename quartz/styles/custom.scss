@@ -188,6 +188,10 @@ table {
   box-sizing: border-box;
 }
 
+html[saved-theme="dark"] .kw-visual {
+  --kw-raw: var(--secondary);
+}
+
 .kw-intro {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(16rem, 1.05fr);
@@ -461,8 +465,8 @@ html[saved-theme="dark"] .okf-visual {
 }
 
 .okf-tile {
-  border-top: 0.3rem solid var(--tile);
   padding: 0.9rem;
+  box-shadow: inset 0 0.28rem 0 var(--tile);
 }
 
 .okf-tile strong,
@@ -591,6 +595,7 @@ html[saved-theme="dark"] .okf-visual {
 .og-section-head p,
 .og-panel p,
 .og-takeaway p {
+  max-width: 68ch;
   margin: 0;
   color: var(--og-muted);
   line-height: 1.55;
@@ -814,15 +819,15 @@ html[saved-theme="dark"] .okf-visual {
   display: grid;
   gap: 0.45rem;
   padding: 0.95rem;
-  border-top: 0.3rem solid var(--og-clay);
+  box-shadow: inset 0 0.28rem 0 var(--og-clay);
 }
 
 .og-pass-two {
-  border-top-color: var(--og-amber);
+  box-shadow: inset 0 0.28rem 0 var(--og-amber);
 }
 
 .og-pass-three {
-  border-top-color: var(--og-olive);
+  box-shadow: inset 0 0.28rem 0 var(--og-olive);
 }
 
 .og-pass small,
@@ -890,7 +895,7 @@ html[saved-theme="dark"] .okf-visual {
 .og-property b {
   width: max-content;
   border-radius: 999px;
-  padding: 0.18rem 0.48rem;
+  padding: 0.28rem 0.56rem;
   background: color-mix(in srgb, var(--og-clay) 22%, transparent);
   color: var(--og-clay);
   font-size: 0.76rem;
