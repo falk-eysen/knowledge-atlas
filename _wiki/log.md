@@ -4,8 +4,8 @@ Newest entries first.
 
 ## 2026-06-14
 
-- **Site navigation**: Changed rendered wiki paths to `/wiki/`, stopped publishing `log.md`, `README.md`, and `map.md` into GitHub Pages, and kept old wiki routes only as unlisted compatibility aliases.
-- **Site navigation**: Kept source-only system docs and empty taxonomy folders out of the rendered Quartz Explorer; populated wiki sections now stay under `_wiki/`, with unlisted top-level aliases only for link compatibility.
+- **Site navigation**: Changed rendered wiki paths to `/wiki/`, stopped publishing `log.md`, `README.md`, and `map.md` into GitHub Pages, and removed compatibility aliases because Quartz still exposed them in Explorer.
+- **Site navigation**: Kept source-only system docs, empty taxonomy folders, and empty `_outputs` out of the rendered Quartz Explorer.
 - **Design**: Moved visual concept page CSS out of Markdown and into scoped site SCSS after Playwright search testing showed inline style blocks polluted search excerpts.
 - **Design**: Tightened mobile explorer width containment while verifying the matte dark palette on deployed pages.
 - **Design**: Finalized the matte warm dark palette around Claude/Radix Sand-inspired tokens: charcoal canvas, cream text, clay links, amber highlights, and low-contrast warm borders.

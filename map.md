@@ -114,12 +114,10 @@ The Quartz site publishes reader-facing pages only:
 - `/wiki/` from `_wiki/index.md`
 - `/wiki/<section>/` for wiki sections with reviewed public pages beyond `index.md`
 
-`README.md`, `map.md`, `log.md`, `_system/`, `_raw/`, `_archive/`, scripts, and empty taxonomy folders stay source-only and are not copied into rendered Pages.
+`README.md`, `map.md`, `log.md`, `_system/`, `_raw/`, `_archive/`, scripts, empty taxonomy folders, and compatibility alias folders stay source-only and are not copied into rendered Pages.
 
 Current published section:
 
 - `/wiki/concepts/`
-
-Unlisted compatibility aliases such as `/_wiki/concepts/` and `/concepts/` may exist so old links do not 404. They are not discovery surfaces.
 
 Source-only operating folders such as `_system/` stay in Git and are not copied into the rendered Explorer.

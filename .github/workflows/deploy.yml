@@ -42,21 +42,11 @@ jobs:
         run: |
           mkdir -p .quartz-build/quartz/content
           cp index.md .quartz-build/quartz/content/
-          mkdir -p .quartz-build/quartz/content/wiki .quartz-build/quartz/content/_wiki
+          mkdir -p .quartz-build/quartz/content/wiki
           cp _wiki/index.md .quartz-build/quartz/content/wiki/index.md
-          cp _wiki/index.md .quartz-build/quartz/content/_wiki/index.md
-          mark_unlisted() {
-            find "$1" -type f -name '*.md' \
-              -exec perl -0pi -e 'if (s/\A---\r?\n/---\nunlisted: true\n/) {} else { s/\A/---\nunlisted: true\n---\n\n/ }' {} \;
-          }
-          mark_unlisted .quartz-build/quartz/content/_wiki
           for section in concepts references claims maps playbooks patterns learning_paths projects areas themes open_questions; do
             if [ -d "_wiki/$section" ] && find "_wiki/$section" -type f -name '*.md' ! -name 'index.md' ! -name 'log.md' ! -name '*.draft.md' ! -name '*.private.md' | grep -q .; then
               cp -R "_wiki/$section" ".quartz-build/quartz/content/wiki/$section"
-              cp -R "_wiki/$section" ".quartz-build/quartz/content/_wiki/$section"
-              mark_unlisted ".quartz-build/quartz/content/_wiki/$section"
-              cp -R "_wiki/$section" ".quartz-build/quartz/content/$section"
-              mark_unlisted ".quartz-build/quartz/content/$section"
             fi
           done
           if [ -d _outputs ] && find _outputs -type f -name '*.md' ! -name 'index.md' ! -name 'log.md' ! -name '*.draft.md' ! -name '*.private.md' | grep -q .; then

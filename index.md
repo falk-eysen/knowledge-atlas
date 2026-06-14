@@ -1,5 +1,7 @@
 ---
 okf_version: "0.1"
+title: Knowledge Atlas
+description: Public OKF-compatible knowledge catalog.
 ---
 
 # Knowledge Atlas
