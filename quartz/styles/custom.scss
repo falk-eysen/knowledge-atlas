@@ -123,7 +123,7 @@ a.internal {
 }
 
 blockquote {
-  border-left-width: 4px;
+  border-left-width: 1px;
   border-radius: 0 var(--atlas-radius-sm) var(--atlas-radius-sm) 0;
   padding: 0.85rem 1rem;
   background: color-mix(in srgb, var(--secondary) 8%, transparent);
@@ -180,6 +180,8 @@ table {
   );
   color: var(--kw-text);
   overflow-wrap: anywhere;
+  box-shadow: inset 0 0.32rem 0
+    color-mix(in srgb, var(--kw-raw) 74%, transparent);
 }
 
 .kw-visual * {
@@ -330,6 +332,9 @@ table {
   --okf-gold: var(--tertiary);
   --okf-violet: #b8ad9e;
   --okf-green: #9aa66d;
+  --okf-yaml-text: #6f5b50;
+  --okf-md-text: #87482f;
+  --okf-link-text: #615a35;
   border: 1px solid var(--okf-border);
   border-radius: 1.35rem;
   padding: clamp(1rem, 2.5vw, 1.6rem);
@@ -341,6 +346,14 @@ table {
   );
   color: var(--okf-text);
   overflow-wrap: anywhere;
+  box-shadow: inset 0 0 0 0.38rem
+    color-mix(in srgb, var(--okf-blue) 8%, transparent);
+}
+
+html[saved-theme="dark"] .okf-visual {
+  --okf-yaml-text: #d0c1b5;
+  --okf-md-text: var(--secondary);
+  --okf-link-text: var(--tertiary);
 }
 
 .okf-visual * {
@@ -429,15 +442,15 @@ table {
 }
 
 .okf-yaml {
-  color: var(--okf-violet);
+  color: var(--okf-yaml-text);
 }
 
 .okf-md {
-  color: var(--okf-blue);
+  color: var(--okf-md-text);
 }
 
 .okf-link {
-  color: var(--okf-gold);
+  color: var(--okf-link-text);
 }
 
 .okf-schema {
@@ -523,11 +536,18 @@ table {
   border: 1px solid var(--og-border);
   border-radius: 1.35rem;
   padding: clamp(1rem, 2.5vw, 1.6rem);
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--light) 91%, var(--secondary) 9%),
-    color-mix(in srgb, var(--light) 93%, var(--tertiary) 7%)
-  );
+  background:
+    radial-gradient(
+        circle at 1px 1px,
+        color-mix(in srgb, var(--og-clay) 18%, transparent) 1px,
+        transparent 1.6px
+      )
+      0 0 / 1.15rem 1.15rem,
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--light) 91%, var(--secondary) 9%),
+      color-mix(in srgb, var(--light) 93%, var(--tertiary) 7%)
+    );
   color: var(--og-text);
   overflow-wrap: anywhere;
 }
@@ -913,6 +933,17 @@ table {
   );
 }
 
+@media (min-width: 900px) {
+  .kw-visual,
+  .okf-visual,
+  .og-visual {
+    --visual-width: min(72rem, calc(100vw - 4rem));
+    width: var(--visual-width);
+    max-width: none;
+    margin-inline: calc((100% - var(--visual-width)) / 2);
+  }
+}
+
 @media (max-width: 640px) {
   .kw-intro,
   .kw-principles,
@@ -970,9 +1001,27 @@ table {
 @media (max-width: 520px) {
   .kw-rail,
   .kw-rail-short,
-  .okf-rail,
-  .og-scoreboard {
+  .okf-rail {
     grid-template-columns: 1fr;
+  }
+
+  .og-scoreboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .og-stat {
+    min-height: 5.4rem;
+    padding: 0.72rem;
+  }
+
+  .og-stat-primary {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .og-stat strong {
+    font-size: clamp(1.55rem, 8vw, 2.2rem);
   }
 }
 
@@ -1002,9 +1051,79 @@ table {
     padding: 1rem;
   }
 
+  .note-properties.metadata-container {
+    max-width: 100%;
+  }
+
+  .note-properties-tags,
+  ul.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.4rem;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .note-properties-tags .note-properties-separator {
+    display: none;
+  }
+
+  .note-properties-tags .tag-link,
+  ul.tags .tag-link {
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
   .page #quartz-body .sidebar.left .explorer-content,
   .page #quartz-body .sidebar.left .explorer-ul {
     max-width: 100%;
     width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .page article {
+    border-radius: 0.85rem;
+    padding: 0.75rem;
+  }
+
+  .kw-visual,
+  .okf-visual,
+  .og-visual {
+    border-radius: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  .kw-intro,
+  .kw-layers,
+  .kw-principles,
+  .kw-routes,
+  .okf-intro,
+  .okf-schema,
+  .okf-flow,
+  .og-hero,
+  .og-problem,
+  .og-anatomy,
+  .og-protocol,
+  .og-takeaways {
+    gap: 0.72rem;
+  }
+
+  .kw-layer-body,
+  .kw-step,
+  .kw-principle,
+  .okf-code,
+  .okf-tile,
+  .okf-node,
+  .og-panel,
+  .og-code-body,
+  .og-pass,
+  .og-call,
+  .og-property,
+  .og-role-card,
+  .og-takeaway {
+    padding: 0.72rem;
   }
 }

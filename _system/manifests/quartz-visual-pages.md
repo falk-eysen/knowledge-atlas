@@ -21,6 +21,8 @@ Knowledge Atlas should feel warm, neutral, dense, and readable. The dark mode di
 
 The current global palette lives in `quartz.config.yaml` and the global Quartz polish lives in `quartz/styles/custom.scss`. Embedded page visuals should inherit those tokens rather than inventing a separate theme.
 
+Use an Impeccable-style review lens for visual polish: avoid generic SaaS/card-grid patterns, gray text on colored surfaces, pure black/gray slabs, overused icon-tile motifs, and desktop layouts merely squeezed onto mobile.
+
 ## Why Use HTML Embeds
 
 Use HTML in Markdown when Markdown would make the artifact harder to read or review. The useful pattern is not decoration; it is higher information density, visual clarity, and faster human review.
@@ -172,4 +174,5 @@ Do not stage unrelated untracked files while doing the pointer update.
 
 - Thariq Shihipar's HTML effectiveness examples: https://thariqs.github.io/html-effectiveness/
 - Anthropic article on HTML artifacts with Claude Code: https://claude.com/blog/using-claude-code-the-unreasonable-effectiveness-of-html
+- Impeccable design guidance for AI agents: https://github.com/pbakaus/impeccable
 - Original X article reference: https://x.com/trq212/article/2052809885763747935
