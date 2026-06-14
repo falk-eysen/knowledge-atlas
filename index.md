@@ -22,12 +22,18 @@ Public OKF-compatible knowledge catalog.
 
 ## Main knowledge areas
 
-- `_wiki/concepts/`
-- `_wiki/references/`
-- `_wiki/claims/`
-- `_wiki/maps/`
-- `_wiki/playbooks/`
-- `_wiki/patterns/`
-- `_wiki/learning_paths/`
-- `_wiki/projects/`
-- `_wiki/open_questions/`
+- [Concepts](concepts/)
+- [References](references/)
+- [Claims](claims/)
+- [Maps](maps/)
+- [Playbooks](playbooks/)
+- [Patterns](patterns/)
+- [Learning paths](learning_paths/)
+- [Projects](projects/)
+- [Areas](areas/)
+- [Themes](themes/)
+- [Open questions](open_questions/)
+
+## Deliverables
+
+- [Outputs](_outputs/)

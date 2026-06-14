@@ -137,7 +137,7 @@ Prefer standard Markdown links.
 Good:
 
 ```md
-[Context Engineering](/_wiki/concepts/context-engineering.md)
+[Context Engineering](/concepts/context-engineering.md)
 ```
 
 Avoid private-only Obsidian references in public pages.

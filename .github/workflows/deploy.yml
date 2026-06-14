@@ -42,8 +42,15 @@ jobs:
         run: |
           mkdir -p .quartz-build/quartz/content
           cp index.md README.md map.md .quartz-build/quartz/content/
-          cp -R _wiki .quartz-build/quartz/content/
+          mkdir -p .quartz-build/quartz/content/_wiki
+          cp _wiki/index.md _wiki/log.md .quartz-build/quartz/content/_wiki/
+          for section in concepts references claims maps playbooks patterns learning_paths projects areas themes open_questions; do
+            if [ -d "_wiki/$section" ]; then
+              cp -R "_wiki/$section" ".quartz-build/quartz/content/$section"
+            fi
+          done
           mkdir -p .quartz-build/quartz/content/_system
+          cp _system/index.md .quartz-build/quartz/content/_system/
           cp -R _system/manifests .quartz-build/quartz/content/_system/
           if [ -d _outputs ]; then cp -R _outputs .quartz-build/quartz/content/; fi
           cp quartz.config.yaml .quartz-build/quartz/quartz.config.yaml

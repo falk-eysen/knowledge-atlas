@@ -34,22 +34,36 @@ This repository is a public OKF-compatible knowledge atlas.
 │   ├── index.md
 │   ├── log.md
 │   ├── concepts/
+│   │   └── index.md
 │   ├── references/
+│   │   └── index.md
 │   ├── claims/
+│   │   └── index.md
 │   ├── maps/
+│   │   └── index.md
 │   ├── projects/
+│   │   └── index.md
 │   ├── areas/
+│   │   └── index.md
 │   ├── themes/
+│   │   └── index.md
 │   ├── open_questions/
+│   │   └── index.md
 │   ├── playbooks/
+│   │   └── index.md
 │   ├── patterns/
+│   │   └── index.md
 │   └── learning_paths/
+│       └── index.md
 ├── _outputs/
+│   ├── index.md
 │   ├── reports/
 │   ├── guides/
 │   └── slides/
 ├── _system/
+│   ├── index.md
 │   ├── manifests/
+│   │   └── index.md
 │   ├── templates/
 │   ├── prompts/
 │   ├── lint/
@@ -60,34 +74,50 @@ This repository is a public OKF-compatible knowledge atlas.
 
 ## Layer model
 
-| Layer | Purpose |
-|---|---|
-| `_raw/` | Public-safe source notes |
-| `_wiki/` | Curated public knowledge |
-| `_outputs/` | Public deliverables |
-| `_system/` | Schema, templates, manifests, workflows |
-| `_archive/` | Retired public material |
-| `scripts/` | Helper automation |
+| Layer       | Purpose                                 |
+| ----------- | --------------------------------------- |
+| `_raw/`     | Public-safe source notes                |
+| `_wiki/`    | Curated public knowledge                |
+| `_outputs/` | Public deliverables                     |
+| `_system/`  | Schema, templates, manifests, workflows |
+| `_archive/` | Retired public material                 |
+| `scripts/`  | Helper automation                       |
 
 ## Quick navigation
 
-| I want to... | Start here |
-|---|---|
-| Understand the repo | `README.md`, `map.md`, `AGENTS.md` |
-| Browse knowledge | `_wiki/index.md` |
-| Check history | `_wiki/log.md` |
-| Understand OKF profile | `_system/manifests/okf-profile.md` |
-| Understand workflow | `_system/manifests/workflow.md` |
-| Understand privacy rules | `_system/manifests/privacy.md` |
-| Understand Notion sync | `_system/manifests/notion-sync.md` |
-| Add a reference | `_system/templates/reference.md` |
-| Add a concept | `_system/templates/concept.md` |
-| Add a claim | `_system/templates/claim.md` |
-| Add a map | `_system/templates/map.md` |
-| Add a playbook | `_system/templates/playbook.md` |
+| I want to...             | Start here                         |
+| ------------------------ | ---------------------------------- |
+| Understand the repo      | `README.md`, `map.md`, `AGENTS.md` |
+| Browse knowledge         | `_wiki/index.md`                   |
+| Check history            | `_wiki/log.md`                     |
+| Understand OKF profile   | `_system/manifests/okf-profile.md` |
+| Understand workflow      | `_system/manifests/workflow.md`    |
+| Understand privacy rules | `_system/manifests/privacy.md`     |
+| Understand Notion sync   | `_system/manifests/notion-sync.md` |
+| Add a reference          | `_system/templates/reference.md`   |
+| Add a concept            | `_system/templates/concept.md`     |
+| Add a claim              | `_system/templates/claim.md`       |
+| Add a map                | `_system/templates/map.md`         |
+| Add a playbook           | `_system/templates/playbook.md`    |
 
 ## Public safety
 
 This repo is public.
 
 Do not add private source paths, private Notion links, private Obsidian links, work-sensitive material, or personal data.
+
+## Rendered site paths
+
+The Quartz site publishes wiki section folders at top-level URLs:
+
+- `/concepts/`
+- `/references/`
+- `/claims/`
+- `/maps/`
+- `/playbooks/`
+- `/patterns/`
+- `/learning_paths/`
+- `/projects/`
+- `/areas/`
+- `/themes/`
+- `/open_questions/`

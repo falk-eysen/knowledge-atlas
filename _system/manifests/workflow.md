@@ -78,11 +78,16 @@ The public site is built from reviewed public sections only:
 - `index.md`
 - `README.md`
 - `map.md`
-- `_wiki/`
+- `_wiki/index.md`
+- `_wiki/log.md`
+- `_wiki/<public-section>/index.md` and its reviewed child pages, published at top-level site paths such as `/concepts/`
+- `_system/index.md`
 - `_system/manifests/`
 - `_outputs/`, when public deliverables exist
 
 The site build excludes raw capture, archives, scripts, local editor state, and private/draft filename patterns.
+
+Every public folder should contain an `index.md` folder note so direct folder URLs render intentionally.
 
 ## Publishing rule
 
