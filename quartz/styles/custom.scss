@@ -87,6 +87,8 @@ html[saved-theme="dark"] body {
 }
 
 .page article {
+  box-sizing: border-box;
+  max-width: 100%;
   border: 1px solid var(--atlas-hairline);
   border-radius: var(--atlas-radius);
   padding: clamp(1.15rem, 3vw, 2.25rem);
@@ -177,6 +179,7 @@ table {
     color-mix(in srgb, var(--light) 94%, var(--tertiary) 6%)
   );
   color: var(--kw-text);
+  overflow-wrap: anywhere;
 }
 
 .kw-visual * {
@@ -337,6 +340,7 @@ table {
     color-mix(in srgb, var(--light) 94%, var(--tertiary) 6%)
   );
   color: var(--okf-text);
+  overflow-wrap: anywhere;
 }
 
 .okf-visual * {
@@ -525,6 +529,7 @@ table {
     color-mix(in srgb, var(--light) 93%, var(--tertiary) 7%)
   );
   color: var(--og-text);
+  overflow-wrap: anywhere;
 }
 
 .og-visual * {
@@ -937,6 +942,29 @@ table {
   .og-call-arrow {
     display: none;
   }
+
+  .okf-code,
+  .og-code-body {
+    overflow-x: visible;
+    white-space: normal;
+  }
+
+  .okf-code-row {
+    grid-template-columns: 2ch minmax(0, 1fr);
+  }
+
+  .okf-yaml,
+  .okf-md,
+  .okf-link,
+  .og-code-body div,
+  .og-code-bar strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .og-indent {
+    padding-left: 0.75rem;
+  }
 }
 
 @media (max-width: 520px) {
@@ -945,6 +973,26 @@ table {
   .okf-rail,
   .og-scoreboard {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  #quartz-body {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  #quartz-body > .sidebar.left,
+  #quartz-body > .center,
+  #quartz-body > .center > article {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  #quartz-body .flex-component {
+    min-width: 0 !important;
+    flex-wrap: wrap !important;
   }
 }
 
