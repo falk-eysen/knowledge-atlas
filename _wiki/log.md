@@ -4,6 +4,7 @@ Newest entries first.
 
 ## 2026-06-14
 
+- **Concepts**: Added a public ObjectGraph visual concept page synthesizing the arXiv paper into an agent-native document traversal model.
 - **Site navigation**: Changed rendered wiki paths to `/wiki/`, stopped publishing `log.md`, `README.md`, and `map.md` into GitHub Pages, and removed compatibility aliases because Quartz still exposed them in Explorer.
 - **Site navigation**: Kept source-only system docs, empty taxonomy folders, and empty `_outputs` out of the rendered Quartz Explorer.
 - **Design**: Moved visual concept page CSS out of Markdown and into scoped site SCSS after Playwright search testing showed inline style blocks polluted search excerpts.

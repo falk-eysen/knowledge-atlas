@@ -506,22 +506,435 @@ table {
   font-weight: 900;
 }
 
+.og-visual {
+  --og-border: var(--lightgray);
+  --og-text: var(--dark);
+  --og-muted: var(--darkgray);
+  --og-card: color-mix(in srgb, var(--light) 88%, var(--dark) 12%);
+  --og-card-soft: color-mix(in srgb, var(--light) 93%, var(--secondary) 7%);
+  --og-clay: #e08b6b;
+  --og-clay-fill: #a55a3b;
+  --og-amber: #d1a041;
+  --og-olive: #9aa66d;
+  border: 1px solid var(--og-border);
+  border-radius: 1.35rem;
+  padding: clamp(1rem, 2.5vw, 1.6rem);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--light) 91%, var(--secondary) 9%),
+    color-mix(in srgb, var(--light) 93%, var(--tertiary) 7%)
+  );
+  color: var(--og-text);
+}
+
+.og-visual * {
+  box-sizing: border-box;
+}
+
+.og-hero,
+.og-problem,
+.og-anatomy,
+.og-protocol,
+.og-takeaways {
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.35rem);
+}
+
+.og-hero {
+  grid-template-columns: minmax(0, 1.05fr) minmax(17rem, 0.95fr);
+  align-items: stretch;
+}
+
+.og-kicker,
+.og-label {
+  color: var(--og-clay);
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.og-title {
+  margin: 0.35rem 0 0.85rem;
+  max-width: 12ch;
+  font-size: clamp(2.15rem, 5.5vw, 4.2rem);
+  line-height: 0.93;
+  letter-spacing: -0.06em;
+}
+
+.og-lede,
+.og-section-head p,
+.og-panel p,
+.og-takeaway p {
+  margin: 0;
+  color: var(--og-muted);
+  line-height: 1.55;
+}
+
+.og-scoreboard {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.og-stat,
+.og-panel,
+.og-code-card,
+.og-pass,
+.og-call,
+.og-property,
+.og-role-card,
+.og-takeaway {
+  border: 1px solid var(--og-border);
+  border-radius: 1rem;
+  background: var(--og-card);
+}
+
+.og-stat {
+  display: grid;
+  align-content: space-between;
+  min-height: 7.25rem;
+  padding: 0.95rem;
+}
+
+.og-stat-primary {
+  grid-row: span 2;
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--og-clay-fill) 42%, var(--og-card) 58%),
+    var(--og-card)
+  );
+}
+
+.og-stat span,
+.og-pass span,
+.og-call span,
+.og-property span,
+.og-role-card span,
+.og-takeaway span {
+  color: var(--og-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.og-stat strong {
+  color: var(--og-text);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.og-problem {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  margin-top: 1.25rem;
+}
+
+.og-panel {
+  padding: 1rem;
+}
+
+.og-panel h3,
+.og-section-head h3,
+.og-takeaway h3 {
+  margin: 0.25rem 0 0.7rem;
+  color: var(--og-text);
+  font-size: clamp(1.35rem, 3vw, 2.1rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.og-problem-arrow,
+.og-call-arrow {
+  align-self: center;
+  color: var(--og-muted);
+  font-weight: 900;
+}
+
+.og-doc-strip {
+  display: grid;
+  gap: 0.42rem;
+  margin: 0.85rem 0;
+}
+
+.og-doc-strip span {
+  height: 0.58rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--og-muted) 32%, transparent);
+}
+
+.og-doc-strip span:nth-child(2),
+.og-doc-strip span:nth-child(5) {
+  width: 72%;
+}
+
+.og-doc-strip span:nth-child(3) {
+  width: 42%;
+  background: var(--og-clay);
+}
+
+.og-node-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0.85rem 0;
+}
+
+.og-node-dot,
+.og-node-line {
+  display: block;
+  min-height: 2.4rem;
+  border: 1px solid var(--og-border);
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, var(--og-card-soft) 86%, var(--og-muted) 14%);
+}
+
+.og-node-line {
+  min-height: 0.32rem;
+  border-radius: 999px;
+  background: var(--og-border);
+}
+
+.og-node-hot {
+  background: color-mix(in srgb, var(--og-clay) 38%, var(--og-card) 62%);
+}
+
+.og-mini-list {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--og-muted);
+}
+
+.og-anatomy,
+.og-protocol,
+.og-matrix,
+.og-roles,
+.og-takeaways {
+  margin-top: 1.25rem;
+}
+
+.og-anatomy {
+  grid-template-columns: minmax(0, 0.8fr) minmax(18rem, 1.2fr);
+  align-items: start;
+}
+
+.og-code-card {
+  overflow: hidden;
+}
+
+.og-code-bar {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  border-bottom: 1px solid var(--og-border);
+  padding: 0.72rem 0.9rem;
+  background: color-mix(in srgb, var(--og-card-soft) 78%, var(--og-clay) 22%);
+}
+
+.og-code-bar span {
+  width: 0.68rem;
+  height: 0.68rem;
+  border-radius: 999px;
+  background: var(--og-amber);
+}
+
+.og-code-bar span:nth-child(2) {
+  background: var(--og-clay);
+}
+
+.og-code-bar span:nth-child(3) {
+  background: var(--og-olive);
+}
+
+.og-code-bar strong {
+  margin-left: auto;
+  color: var(--og-muted);
+  font-family:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+}
+
+.og-code-body {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  overflow-x: auto;
+  color: var(--og-muted);
+  font-family:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.og-code-body b {
+  color: var(--og-clay);
+  font-weight: 750;
+}
+
+.og-indent {
+  padding-left: 1.25rem;
+}
+
+.og-passages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.og-pass {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.95rem;
+  border-top: 0.3rem solid var(--og-clay);
+}
+
+.og-pass-two {
+  border-top-color: var(--og-amber);
+}
+
+.og-pass-three {
+  border-top-color: var(--og-olive);
+}
+
+.og-pass small,
+.og-call small,
+.og-role-card small {
+  color: var(--og-clay);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.og-pass strong,
+.og-call strong,
+.og-property strong,
+.og-role-card strong,
+.og-takeaway strong {
+  display: block;
+  color: var(--og-text);
+}
+
+.og-pass em {
+  color: var(--og-amber);
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 750;
+}
+
+.og-protocol-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.og-call {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.95rem;
+}
+
+.og-call strong {
+  overflow-wrap: anywhere;
+  font-family:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+.og-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.og-matrix-head {
+  grid-column: 1 / -1;
+}
+
+.og-property {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.9rem;
+}
+
+.og-property b {
+  width: max-content;
+  border-radius: 999px;
+  padding: 0.18rem 0.48rem;
+  background: color-mix(in srgb, var(--og-clay) 22%, transparent);
+  color: var(--og-clay);
+  font-size: 0.76rem;
+}
+
+.og-roles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.og-role-card {
+  display: grid;
+  gap: 0.45rem;
+  min-height: 8rem;
+  padding: 0.95rem;
+}
+
+.og-role-card:nth-child(2) small {
+  color: var(--og-amber);
+}
+
+.og-role-card:nth-child(3) small {
+  color: var(--og-olive);
+}
+
+.og-takeaways {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr) minmax(0, 0.85fr);
+}
+
+.og-takeaway {
+  padding: 1rem;
+}
+
+.og-takeaway-main {
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--og-clay-fill) 28%, var(--og-card) 72%),
+    var(--og-card)
+  );
+}
+
 @media (max-width: 640px) {
   .kw-intro,
   .kw-principles,
   .okf-intro,
-  .okf-schema {
+  .okf-schema,
+  .og-hero,
+  .og-problem,
+  .og-anatomy,
+  .og-passages,
+  .og-protocol-grid,
+  .og-matrix,
+  .og-roles,
+  .og-takeaways {
     grid-template-columns: 1fr;
   }
 
   .kw-rail,
   .kw-rail-short,
-  .okf-rail {
+  .okf-rail,
+  .og-scoreboard {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .kw-arrow,
-  .okf-arrow {
+  .okf-arrow,
+  .og-problem-arrow,
+  .og-call-arrow {
     display: none;
   }
 }
@@ -529,7 +942,8 @@ table {
 @media (max-width: 520px) {
   .kw-rail,
   .kw-rail-short,
-  .okf-rail {
+  .okf-rail,
+  .og-scoreboard {
     grid-template-columns: 1fr;
   }
 }
