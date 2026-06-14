@@ -169,7 +169,7 @@ This visual explains the repository shape used by the atlas: capture evidence fi
     padding: 0.95rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 640px) {
     .kw-intro,
     .kw-principles {
       grid-template-columns: 1fr;
@@ -263,7 +263,6 @@ This visual explains the repository shape used by the atlas: capture evidence fi
         </div>
       </div>
     </div>
-
     <div>
       <div class="kw-route-title">Publication loop</div>
       <div class="kw-rail kw-rail-short" role="list" aria-label="Publication loop from wiki to public atlas">
@@ -286,9 +285,7 @@ This visual explains the repository shape used by the atlas: capture evidence fi
         </div>
       </div>
     </div>
-
   </div>
-
   <div class="kw-principles">
     <div class="kw-principle">
       <strong>Separate evidence from synthesis</strong>

@@ -196,7 +196,7 @@ OKF is the public atlas convention for turning Markdown notes into portable know
     font-weight: 900;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 640px) {
     .okf-intro,
     .okf-schema {
       grid-template-columns: 1fr;
@@ -249,7 +249,6 @@ OKF is the public atlas convention for turning Markdown notes into portable know
       </div>
     </div>
   </div>
-
   <div class="okf-schema" aria-label="OKF page components">
     <div class="okf-tile" style="--tile: var(--okf-violet)">
       <strong>Identity</strong>
@@ -268,7 +267,6 @@ OKF is the public atlas convention for turning Markdown notes into portable know
       <span>Sources and derived-from fields keep knowledge grounded.</span>
     </div>
   </div>
-
   <div class="okf-flow">
     <div class="okf-flow-title">Knowledge object lifecycle</div>
     <div class="okf-rail" role="list" aria-label="Open Knowledge Format lifecycle from source to output">
