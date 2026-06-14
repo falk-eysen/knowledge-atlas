@@ -89,6 +89,8 @@ The site build excludes raw capture, archives, scripts, source-only operating do
 
 Published public folders should contain an `index.md` folder note so direct folder URLs render intentionally. Populated wiki sections render under `/_wiki/<section>/`; empty taxonomy folders stay source-only until they contain reviewed pages.
 
+The build may emit unlisted top-level aliases for populated wiki sections to keep old links and Quartz Explorer folder hrefs working. These aliases must use `unlisted: true` and must not appear in Explorer, search, RSS, sitemap, tags, or graph discovery surfaces.
+
 Visual pages that depend on embedded HTML/CSS, diagrams, dark mode, or responsive layout should follow [Quartz Visual Page Workflow](quartz-visual-pages.md).
 
 ## Publishing rule

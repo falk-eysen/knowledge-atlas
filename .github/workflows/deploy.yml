@@ -47,6 +47,9 @@ jobs:
           for section in concepts references claims maps playbooks patterns learning_paths projects areas themes open_questions; do
             if [ -d "_wiki/$section" ] && find "_wiki/$section" -type f -name '*.md' ! -name 'index.md' ! -name '*.draft.md' ! -name '*.private.md' | grep -q .; then
               cp -R "_wiki/$section" ".quartz-build/quartz/content/_wiki/$section"
+              cp -R "_wiki/$section" ".quartz-build/quartz/content/$section"
+              find ".quartz-build/quartz/content/$section" -type f -name '*.md' \
+                -exec perl -0pi -e 's/\A---\r?\n/---\nunlisted: true\n/' {} \;
             fi
           done
           if [ -d _outputs ] && find _outputs -type f -name '*.md' ! -name 'index.md' ! -name '*.draft.md' ! -name '*.private.md' | grep -q .; then

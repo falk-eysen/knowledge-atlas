@@ -114,4 +114,6 @@ Current published section:
 
 - `/_wiki/concepts/`
 
+Unlisted compatibility aliases such as `/concepts/` may exist so old links and Quartz Explorer folder hrefs do not 404. They are not discovery surfaces.
+
 Source-only operating folders such as `_system/` stay in Git and are not copied into the rendered Explorer.
