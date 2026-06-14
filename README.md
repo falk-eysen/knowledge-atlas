@@ -83,8 +83,7 @@ public note → private Notion page
 
 - [`index.md`](index.md) — OKF bundle entry
 - [`map.md`](map.md) — repository map
-- [`AGENTS.md`](AGENTS.md) — agent operating rules
 - [`_wiki/index.md`](_wiki/index.md) — public knowledge index
 - [`_wiki/log.md`](_wiki/log.md) — update log
-- [`_system/manifests/okf-profile.md`](_system/manifests/okf-profile.md) — local OKF profile
-- [`_system/manifests/workflow.md`](_system/manifests/workflow.md) — publication workflow
+
+Operating docs such as `AGENTS.md` and `_system/manifests/` live in the Git repository, not in the rendered site Explorer.

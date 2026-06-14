@@ -45,14 +45,13 @@ jobs:
           mkdir -p .quartz-build/quartz/content/_wiki
           cp _wiki/index.md _wiki/log.md .quartz-build/quartz/content/_wiki/
           for section in concepts references claims maps playbooks patterns learning_paths projects areas themes open_questions; do
-            if [ -d "_wiki/$section" ]; then
+            if [ -d "_wiki/$section" ] && find "_wiki/$section" -type f -name '*.md' ! -name 'index.md' ! -name '*.draft.md' ! -name '*.private.md' | grep -q .; then
               cp -R "_wiki/$section" ".quartz-build/quartz/content/$section"
             fi
           done
-          mkdir -p .quartz-build/quartz/content/_system
-          cp _system/index.md .quartz-build/quartz/content/_system/
-          cp -R _system/manifests .quartz-build/quartz/content/_system/
-          if [ -d _outputs ]; then cp -R _outputs .quartz-build/quartz/content/; fi
+          if [ -d _outputs ] && find _outputs -type f -name '*.md' ! -name 'index.md' ! -name '*.draft.md' ! -name '*.private.md' | grep -q .; then
+            cp -R _outputs .quartz-build/quartz/content/
+          fi
           cp quartz.config.yaml .quartz-build/quartz/quartz.config.yaml
           if [ -f quartz/styles/custom.scss ]; then cp quartz/styles/custom.scss .quartz-build/quartz/quartz/styles/custom.scss; fi
 

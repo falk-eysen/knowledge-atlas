@@ -203,7 +203,6 @@ plugins:
     options:
       links:
         Source: https://github.com/falk-eysen/knowledge-atlas
-        Private Boundary: /knowledge-atlas/_system/manifests/privacy
   - source: github:quartz-community/spacer
     enabled: true
     options: {}

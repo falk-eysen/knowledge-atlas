@@ -51,7 +51,7 @@ Read in this order when relevant:
 - Include OKF-compatible YAML frontmatter on normal Markdown files; `index.md` and `log.md` are reserved navigation/history files.
 - Cite public sources for factual claims when possible.
 - Keep uncertainty visible; do not overstate claims.
-- Every public wiki section folder should have an `index.md` folder note so direct Quartz URLs render intentionally.
+- Published wiki section folders should have an `index.md` folder note. Empty taxonomy folders stay source-only until they contain reviewed public pages.
 
 ## Public Boundary
 
@@ -84,7 +84,7 @@ Before finishing a content change, use the narrowest checks that apply:
 Before finishing a site or deployment change:
 
 - Review `.github/workflows/deploy.yml` for the actual Quartz build path.
-- Confirm published sections are still intentionally copied into Quartz content.
+- Confirm only populated public sections are copied into Quartz content.
 - Confirm excluded areas remain excluded from the site build: `_raw/`, `_archive/`, `scripts/`, local editor state, and private/draft filename patterns.
 - Follow `_system/manifests/quartz-visual-pages.md` for embedded HTML/CSS, visual diagrams, dark-mode, or responsive rendering changes.
 - Verify GitHub Pages after push when the change affects rendering or deployment.
