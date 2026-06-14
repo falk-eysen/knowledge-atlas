@@ -4,6 +4,7 @@ Newest entries first.
 
 ## 2026-06-14
 
+- **Design**: Fixed the visual embed desktop containment regression by removing the negative-margin wide breakout and adding sidebar-overlap checks to the visual QA workflow.
 - **Design**: Applied an Impeccable-informed polish pass to public visual embeds: stronger page-specific motifs, higher OKF code contrast, compact ObjectGraph mobile metrics, cleaner mobile tag wrapping, and wider desktop diagram canvas.
 - **Design**: Fixed mobile clipping in public visual embeds after Playwright checks across `320`, `360`, `390`, `430`, `520`, and `640` px widths.
 - **Concepts**: Added a public ObjectGraph visual concept page synthesizing the arXiv paper into an agent-native document traversal model.

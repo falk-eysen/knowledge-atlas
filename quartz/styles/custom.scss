@@ -938,17 +938,6 @@ html[saved-theme="dark"] .okf-visual {
   );
 }
 
-@media (min-width: 900px) {
-  .kw-visual,
-  .okf-visual,
-  .og-visual {
-    --visual-width: min(72rem, calc(100vw - 4rem));
-    width: var(--visual-width);
-    max-width: none;
-    margin-inline: calc((100% - var(--visual-width)) / 2);
-  }
-}
-
 @media (max-width: 640px) {
   .kw-intro,
   .kw-principles,
